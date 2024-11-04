@@ -8,22 +8,7 @@
 
 ## Recomendaciones:
 
-### -`Metodo de track en tiempo real`🔧
+### -`Hacer buscador funcional`🔧
 
 
-### -`Metodo para iniciar y finalizar viaje`🔧
 
-
-### -`Notificar sobre inicios y finalizacion de viajes`🔧
-
-
-### -`Calcular tiempo estimado usando api`🔧
-
-
-### -Agregar tipos de pedido / mensajeria / packetes / documentos / respuestos / accesorio de teléfono / maletas /
-
-
-### -Calcular precio segun la distancia
-
-
-### -Añadir opcion de pedido urgente
