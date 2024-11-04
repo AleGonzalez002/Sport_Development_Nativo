@@ -78,16 +78,16 @@ const loadTemplate = async () => {
             `);
             // Se agrega el pie de la página web después del contenido principal.
             MAIN.insertAdjacentHTML('afterend', `
-                <footer>
-                    <nav class="navbar fixed-bottom bg-dark">
+               <footer style="background-color: #333; margin-top: auto;">
+                    <nav class="navbar bg-dark">
                         <div class="container">
                             <div>
-                                <p><a class="nav-link text-white" href="https://github.com/AleGonzalez004/Sport_Development_3" target="_blank"><i class="bi bi-github"></i>Sport Development</a></p>
-                                <p><a class="bi bi-c-square-fill text-white"></i> 2018-2024 Todos los derechos reservados</a>
+                                <h4 class="text-white">Sport Development</h4>
+                                <a class="text-white"><i class="bi bi-c-square text-white"></i> 2018-2024 Todos los derechos reservados</a>
                             </div>
                             <div>
-                                <p><a class="nav-link text-white" href="../public/" target="_blank"><i class="bi bi-cart-fill"></i> Sitio público</a></p>
-                                <p><a class="bi bi-envelope-fill text-white"></i> Sport_Development3@gmail.com</a>
+                                <h4 class="text-white">Contáctanos</h4>
+                                <a class="text-white"><i class="bi bi-envelope text-white"></i> sportdevelopment@gmail.com</a>
                             </div>
                         </div>
                     </nav>
@@ -114,11 +114,17 @@ const loadTemplate = async () => {
             `);
             // Se agrega el pie de la página web después del contenido principal.
             MAIN.insertAdjacentHTML('afterend', `
-                <footer>
-                    <nav class="navbar fixed-bottom bg-dark">
+               <footer style="background-color: #333; margin-top: auto;">
+                    <nav class="navbar bg-dark">
                         <div class="container">
-                            <p><a class="nav-link text-white" href="https://github.com/AleGonzalez004/Sport_Development_3" target="_blank"><i class="bi bi-github"></i> Sport Development</a></p>
-                            <a class="text-white"><i class="bi bi-envelope-fill text-white"></i> Sport_Development3@gmail.com</a>
+                            <div>
+                                <h4 class="text-white">Sport Development</h4>
+                                <a class="text-white"><i class="bi bi-c-square text-white"></i> 2018-2024 Todos los derechos reservados</a>
+                            </div>
+                            <div>
+                                <h4 class="text-white">Contáctanos</h4>
+                                <a class="text-white"><i class="bi bi-envelope text-white"></i> sportdevelopment@gmail.com</a>
+                            </div>
                         </div>
                     </nav>
                 </footer>

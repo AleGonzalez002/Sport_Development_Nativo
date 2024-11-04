@@ -83,19 +83,19 @@ const loadTemplate = async () => {
     }
     // Se agrega el pie de la página web después del contenido principal.
     MAIN.insertAdjacentHTML('afterend', `
-        <footer>
-            <nav class="navbar fixed-bottom bg-dark">
-                <div class="container">
-                    <div>
-                        <h4 class="text-white">Sport Development</h4>
-                        <a class="text-white"><i class="bi bi-c-square text-white"></i> 2018-2024 Todos los derechos reservados</a>
-                    </div>
-                    <div>
-                        <h4 class="text-white">Contáctanos</h4>
-                        <a class="text-white"><i class="bi bi-envelope text-white"></i> sportdevelopment@gmail.com</a>
-                    </div>
+    <footer style="background-color: #333; margin-top: auto;">
+        <nav class="navbar bg-dark">
+            <div class="container">
+                <div>
+                    <h4 class="text-white">Sport Development</h4>
+                    <a class="text-white"><i class="bi bi-c-square text-white"></i> 2018-2024 Todos los derechos reservados</a>
                 </div>
-            </nav>
-        </footer>
+                <div>
+                    <h4 class="text-white">Contáctanos</h4>
+                    <a class="text-white"><i class="bi bi-envelope text-white"></i> sportdevelopment@gmail.com</a>
+                </div>
+            </div>
+        </nav>
+    </footer>
     `);
 }

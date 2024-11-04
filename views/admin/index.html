@@ -17,9 +17,8 @@
     <link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap-icons.min.css">
 </head>
 
-<body>
-    <!-- Contenido principal del documento -->
-    <main>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+    <main style="flex: 1;">
         <!-- Título del contenido principal -->
         <h3 id="mainTitle"></h3>
         <img src="../../resources/img/user.png" class="mx-auto d-block" width="200">
@@ -70,9 +69,9 @@
                     <label for="confirmarClave" class="form-label">Confirmar contraseña</label>
                     <input id="confirmarClave" type="password" name="confirmarClave" class="form-control" required>
                 </div>
-                <div class="text-center">
-                    <button type="reset" class="btn btn-dark"><i class="bi bi-x-square"></i> Cancelar</button>
-                    <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+                <div class="text-center py-5">
+                    <button type="reset" class="btn btn-dark p-3"><i class="bi bi-x-square btn-lg"></i> Cancelar</button>
+                    <button type="submit" class="btn btn-primary p-3"><i class="bi bi-save btn-lg"></i> Guardar</button>
                 </div>
             </div>
         </form>

@@ -17,9 +17,8 @@
     <link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap-icons.min.css">
 </head>
 
-<body>
-    <!-- Contenido principal del documento -->
-    <main>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+    <main style="flex: 1;">
         <!-- Título del contenido principal -->
         <h3 id="mainTitle"></h3>
         <!-- Formulario para cambiar datos personales -->
@@ -70,7 +69,7 @@
                                     required>
                             </div>
                             <div class="col-12 text-center">
-                                <span>CONTRASEÑA NUEVA</span>
+                                <span>Escribe la nueva contraseña</span>
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <label for="claveNueva" class="form-label">Contraseña</label>
@@ -83,8 +82,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="reset" class="btn btn-dark">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="submit" class="btn btn-primary"> <i class="bi bi-save"></i> Confirmar</button>
                         </div>
                     </form>
                 </div>
