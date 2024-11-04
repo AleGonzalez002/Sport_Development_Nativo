@@ -79,32 +79,6 @@ const fillTable = async (form = null) => {
             TABLE_BODY.innerHTML += `
                 <tr>
                     <td>${row.nombre}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
                     <td>
                 <button type="button" class="btn btn-success me-2 mb-2 mb-sm-2" onclick="openUpdate(${row.ID_DEPORTE})">
                             <i class="bi bi-pencil-fill"></i>
