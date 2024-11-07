@@ -78,16 +78,18 @@ const fillTable = async (form = null) => {
             // Se crean y concatenan las filas de la tabla con los datos de cada registro.
             TABLE_BODY.innerHTML += `
                 <tr>
-                    <td><img src="../../api/images/categorias/${row.imagen}" height="50"></td>
+                    <td><img src="../../api/images/categorias/${row.imagen}" height="120"></td>
                     <td>${row.nombre}</td>
                     <td>${row.descripcion}</td>
                     <td>
                         <button type="button" class="btn btn-success" onclick="openUpdate(${row.id_categoria})">
                             <i class="bi bi-pencil-fill"></i>
                         </button>
+                        <div class="py-1"></div>
                         <button type="button" class="btn btn-danger" onclick="openDelete(${row.id_categoria})">
                             <i class="bi bi-trash-fill"></i>
                         </button>
+                        <div class="py-1"></div>
                         <button type="button" class="btn btn-dark" onclick="openReport(${row.id_categoria})">
                             <i class="bi bi-filetype-pdf"></i>
                         </button>

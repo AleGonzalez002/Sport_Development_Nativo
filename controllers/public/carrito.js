@@ -69,11 +69,12 @@ async function readDetail() {
                     <td>${row.cantidad_producto}</td>
                     <td>${subtotal.toFixed(2)}</td>
                     <td class="text-center">
-                        <button type="button" onclick="openUpdate(${row.id_detalle}, ${row.cantidad_producto})" class="btn btn-dark p-3">
-                            <i class="bi bi-plus-slash-minus"></i>Cantidad
+                        <button type="button" onclick="openUpdate(${row.id_detalle}, ${row.cantidad_producto})" class="btn btn-dark">
+                            <i class="bi bi-plus-slash-minus"></i> Cantidad
                         </button>
-                        <button type="button" onclick="openDelete(${row.id_detalle})" class="btn btn-dark p-3">
-                            <i class="bi bi-cart-dash"></i>Eliminar
+                        <div class="py-1"></div>
+                        <button type="button" onclick="openDelete(${row.id_detalle})" class="btn btn-dark">
+                            <i class="bi bi-cart-dash"></i> Eliminar
                         </button>
                     </td>
                 </tr>

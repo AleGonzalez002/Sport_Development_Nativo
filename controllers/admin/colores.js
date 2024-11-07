@@ -12,7 +12,7 @@ const SAVE_MODAL = new bootstrap.Modal('#saveModal'),
 const SAVE_FORM = document.getElementById('saveForm'),
     ID_DEPA = document.getElementById('idDepartamento'),
     NOMBRE_DEPA = document.getElementById('NomDepa');
-    
+
 // Método del evento para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', () => {
     // Llamada a la función para mostrar el encabezado y pie del documento.
@@ -81,6 +81,7 @@ const fillTable = async (form = null) => {
                 <button type="button" class="btn btn-success me-2 mb-2 mb-sm-2" onclick="openUpdate(${row.id_color})">
                             <i class="bi bi-pencil-fill"></i>
                         </button>
+                        <div class="py-1"></div>
                 <button type="button" class="btn btn-danger me-2 mb-2 mb-sm-2" onclick="openDelete(${row.id_color})">
                     <i class="bi bi-trash-fill"></i>
                 </button>                

@@ -1,4 +1,3 @@
-
 // Constante para completar la ruta de la API.
 const GRAFICO_API = 'services/admin/grafico.php';
 
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     graficoVentas();
 });
 
-
 /*
 *   Función asíncrona para mostrar un gráfico de barras con la cantidad de productos por categoría.
 *   Parámetros: ninguno.
@@ -54,7 +52,7 @@ const graficoBarrasCategorias = async () => {
         const palette = generatePalette('#1a4373', categorias.length);
 
         // Llamada a la función para generar y mostrar un gráfico de barras.
-        new Chart(document.getElementById('chart1'), {
+        new Chart(document.getElementById('chart2'), {
             type: 'bar',
             data: {
                 labels: categorias,
@@ -62,33 +60,38 @@ const graficoBarrasCategorias = async () => {
                     label: 'Cantidad de productos',
                     data: cantidades,
                     backgroundColor: palette.backgroundColors,
-                    borderColor: palette.borderColors,
-                    borderWidth: 1
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 scales: {
-                    yAxes: [{
+                    y: {
+                        beginAtZero: true,
                         ticks: {
                             beginAtZero: true
                         }
-                    }]
+                    }
                 },
-                legend: {
-                    display: true,
-                    position: 'top',
-                    align: 'center'
-                },
-                title: {
-                    display: true,
-                    text: 'Cantidad de productos por categoría'
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        align: 'center'
+                    },
+                    title: {
+                        display: true,
+                        text: 'Cantidad de productos por categoría',
+                        font: {
+                            size: 18,
+                            weight: 'normal'
+                        }
+                    }
                 }
             }
         });
     } else {
-        document.getElementById('chart1').remove();
+        document.getElementById('chart2').remove();
         console.log(DATA.error);
     }
 }
@@ -98,7 +101,7 @@ const graficoPastelCategorias = async () => {
     const DATA = await fetchData(GRAFICO_API, 'porcentajeProductosCategoria');
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se remueve la etiqueta canvas.
     if (DATA.status) {
-        // Se declaran los arreglos para guardar los datos a gráficar.
+        // Se declaran los arreglos para guardar los datos a graficar.
         let categorias = [];
         let porcentajes = [];
         // Se recorre el conjunto de registros fila por fila a través del objeto row.
@@ -112,7 +115,7 @@ const graficoPastelCategorias = async () => {
         const palette = generatePieColors('#1a4373', categorias.length);
 
         // Llamada a la función para generar y mostrar un gráfico de pastel.
-        new Chart(document.getElementById('chart2'), {
+        new Chart(document.getElementById('chart1'), {
             type: 'doughnut',
             data: {
                 labels: categorias,
@@ -120,27 +123,31 @@ const graficoPastelCategorias = async () => {
                     label: 'Porcentaje de productos por categoría',
                     data: porcentajes,
                     backgroundColor: palette,
-                    borderColor: '#ffffff',
-                    borderWidth: 1
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                legend: {
-                    display: true,
-                    position: 'top',
-                    align: 'center'
-                },
-                title: {
-                    display: true,
-                    text: 'Porcentaje de productos por categoría'
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        align: 'center'
+                    },
+                    title: {
+                        display: true,
+                        text: 'Porcentaje de productos por categoría',
+                        font: {
+                            size: 18,
+                            weight: 'normal'
+                        }
+                    }
                 },
                 tooltips: {
                     callbacks: {
                         label: function (tooltipItem, data) {
                             var dataset = data.datasets[tooltipItem.datasetIndex];
-                            var total = dataset.data.reduce(function (previousValue, currentValue, currentIndex, array) {
+                            var total = dataset.data.reduce(function (previousValue, currentValue) {
                                 return previousValue + currentValue;
                             });
                             var currentValue = dataset.data[tooltipItem.index];
@@ -152,7 +159,7 @@ const graficoPastelCategorias = async () => {
             }
         });
     } else {
-        document.getElementById('chart2').remove();
+        document.getElementById('chart1').remove();
         console.log(DATA.error);
     }
 }
@@ -170,7 +177,7 @@ const graficoCrecimientoClientes = async () => {
             cantidades.push(row.cantidad);
         });
 
-        new Chart(document.getElementById('chart3'), {
+        new Chart(document.getElementById('chart4'), {
             type: 'line',
             data: {
                 labels: fechas,
@@ -190,6 +197,15 @@ const graficoCrecimientoClientes = async () => {
                         position: 'top',
                         align: 'center'
                     },
+                    title: {
+                        display: true,
+                        text: 'Crecimiento de clientes por fecha',  
+                        position: 'top', 
+                        font: {
+                            size: 18, 
+                            weight: 'normal',  
+                        }
+                    }
                 },
                 scales: {
                     x: {
@@ -209,7 +225,7 @@ const graficoCrecimientoClientes = async () => {
             }
         });
     } else {
-        document.getElementById('chart3').remove();
+        document.getElementById('chart4').remove();
         console.log(DATA.error);
     }
 };
@@ -228,7 +244,7 @@ const graficoEstadoPedidos = async () => {
             cantidades.push(row.cantidad);
         });
 
-        new Chart(document.getElementById('chart4'), {
+        new Chart(document.getElementById('chart3'), {
             type: 'doughnut',
             data: {
                 labels: estados,
@@ -236,8 +252,6 @@ const graficoEstadoPedidos = async () => {
                     label: 'Estado de Pedidos',
                     data: cantidades,
                     backgroundColor: generatePieColors('#1a4373', estados.length),
-                    borderColor: '#ffffff',
-                    borderWidth: 1
                 }]
             },
             options: {
@@ -249,11 +263,20 @@ const graficoEstadoPedidos = async () => {
                         position: 'top',
                         align: 'center'
                     },
+                    title: {
+                        display: true,
+                        text: 'Estado de los pedidos',  
+                        position: 'top', 
+                        font: {
+                            size: 18, 
+                            weight: 'normal',  
+                        }
+                    }
                 }
             }
         });
     } else {
-        document.getElementById('chart4').remove();
+        document.getElementById('chart3').remove();
         console.log(DATA.error);
     }
 };
@@ -290,6 +313,15 @@ const graficoVentas = async () => {
                         position: 'top',
                         align: 'center'
                     },
+                    title: {
+                        display: true,
+                        text: 'Crecimientos de ventas por fecha',  
+                        position: 'top', 
+                        font: {
+                            size: 18, 
+                            weight: 'normal',  
+                        }
+                    }
                 },
                 scales: {
                     x: {
@@ -307,25 +339,12 @@ const graficoVentas = async () => {
                     }
                 }
             }
-        });
+        });        
     } else {
         document.getElementById('chart5').remove();
         console.log(DATA.error);
     }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //Diseño de los graficos
 

@@ -81,6 +81,7 @@ const fillTable = async (form = null) => {
                 <button type="button" class="btn btn-success me-2 mb-2 mb-sm-2" onclick="openUpdate(${row.ID_DEPORTE})">
                             <i class="bi bi-pencil-fill"></i>
                         </button>
+                        <div class="py-1"></div>
                 <button type="button" class="btn btn-danger me-2 mb-2 mb-sm-2" onclick="openDelete(${row.ID_DEPORTE})">
                     <i class="bi bi-trash-fill"></i>
                 </button>                
