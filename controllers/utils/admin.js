@@ -4,7 +4,7 @@
 */
 
 // Constante para completar la ruta de la API.
-const USER_API = 'services/admin/administrador.php';
+const USER_API = 'services/admin/administrator.php';
 // Constante para establecer el elemento del contenido principal.
 const MAIN = document.querySelector('main');
 MAIN.style.paddingTop = '75px';
@@ -42,30 +42,30 @@ const loadTemplate = async () => {
                             <div class="collapse navbar-collapse" id="navbarContent">
                                 <ul class="navbar-nav ms-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link text-white" href="colores.html">Colores</a>
+                                        <a class="nav-link text-white" href="color.html">Colores</a>
                                     </li>
                                      <li class="nav-item">
-                                        <a class="nav-link text-white" href="generos.html">Generos</a>
+                                        <a class="nav-link text-white" href="gender.html">Generos</a>
                                     </li>
                                     <li class="nav-item">
-                                    <a class="nav-link text-white" href="marcas.html">Marcas</a>
+                                    <a class="nav-link text-white" href="brand.html">Marcas</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link text-white" href="producto.html">Productos</a>
+                                        <a class="nav-link text-white" href="product.html">Productos</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link text-white" href="categoria.html">Categorías</a>
+                                        <a class="nav-link text-white" href="category.html">Categorías</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link text-white" href="administrador.html">Administradores</a>
+                                        <a class="nav-link text-white" href="administrator.html">Administradores</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link text-white" href="cliente.html">Clientes</a>
+                                        <a class="nav-link text-white" href="client.html">Clientes</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown" aria-expanded="false">Cuenta: <b>${DATA.username}</b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item text-dark" href="perfil.html">Editar perfil</a></li>
+                                            <li><a class="dropdown-item text-dark" href="profile.html">Editar perfil</a></li>
                                             <li><hr class="dropdown-divider text-dark"></li>
                                             <li><a class="dropdown-item text-dark" href="#" onclick="logOut()">Cerrar sesión</a></li>
                                         </ul>

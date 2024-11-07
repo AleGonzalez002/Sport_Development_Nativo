@@ -4,7 +4,7 @@
 */
 
 // Constante para completar la ruta de la API.
-const USER_API = 'services/public/cliente.php';
+const USER_API = 'services/public/client.php';
 // Constante para establecer el elemento del contenido principal.
 const MAIN = document.querySelector('main');
 MAIN.style.paddingTop = '75px';
@@ -39,13 +39,13 @@ const loadTemplate = async () => {
                             <div class="collapse navbar-collapse text-white" id="navbarNavAltMarkup">
                                 <div class="navbar-nav ms-auto text-white">
                                     <a class="nav-link text-white" href="index.html"><i class="bi bi-shop"></i> Catálogo</a>
-                                    <a class="nav-link text-white" href="carrito.html"><i class="bi bi-cart"></i> Carrito</a>
-                                    <a class="nav-link text-white" href="pedido.html"><i class="bi bi-truck"></i> Pedidos</a>
-                                    <a class="nav-link text-white" href="historial.html"><i class="bi bi-hourglass-split"></i> Historial</a>
+                                    <a class="nav-link text-white" href="cart.html"><i class="bi bi-cart"></i> Carrito</a>
+                                    <a class="nav-link text-white" href="order.html"><i class="bi bi-truck"></i> Pedidos</a>
+                                    <a class="nav-link text-white" href="history.html"><i class="bi bi-hourglass-split"></i> Historial</a>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown" aria-expanded="false">Cuenta: <b>${DATA.name}</b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item text-dark" href="perfil.html">Editar perfil</a></li>
+                                            <li><a class="dropdown-item text-dark" href="profile.html">Editar perfil</a></li>
                                             <li><hr class="dropdown-divider text-dark"></li>
                                             <li><a class="dropdown-item text-dark" href="#" onclick="logOut()">Cerrar sesión</a></li>
                                         </ul>
@@ -72,7 +72,7 @@ const loadTemplate = async () => {
                         <div class="collapse navbar-collapse text-white" id="navbarNavAltMarkup">
                             <div class="navbar-nav ms-auto text-white">
                                 <a class="nav-link text-white" href="index.html"><i class="bi bi-shop"></i> Catálogo</a>
-                                <a class="nav-link text-white" href="registrar.html"><i class="bi bi-person"></i> Crear cuenta</a>
+                                <a class="nav-link text-white" href="register.html"><i class="bi bi-person"></i> Crear cuenta</a>
                                 <a class="nav-link text-white" href="login.html"><i class="bi bi-box-arrow-right"></i> Iniciar sesión</a>
                             </div>
                         </div>

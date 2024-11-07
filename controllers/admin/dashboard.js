@@ -1,5 +1,5 @@
 // Constante para completar la ruta de la API.
-const GRAFICO_API = 'services/admin/grafico.php';
+const GRAFICO_API = 'services/admin/graph.php';
 
 // Método del evento para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', () => {

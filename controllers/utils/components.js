@@ -10,6 +10,7 @@ const SERVER_URL = 'http://localhost/Sport_Development_3/api/';
 *   Parámetros: message (mensaje de confirmación).
 *   Retorno: resultado de la promesa.
 */
+
 const confirmAction = (message) => {
     return swal({
         title: 'Advertencia',
@@ -38,6 +39,7 @@ const confirmAction = (message) => {
 *   Parámetros: type (tipo de mensaje), text (texto a mostrar), timer (uso de temporizador) y url (valor opcional con la ubicación de destino).
 *   Retorno: ninguno.
 */
+
 const sweetAlert = async (type, text, timer, url = null) => {
     // Se compara el tipo de mensaje a mostrar.
     switch (type) {
@@ -81,6 +83,7 @@ const sweetAlert = async (type, text, timer, url = null) => {
 *   Parámetros: filename (nombre del archivo), action (acción a realizar), select (identificador del select en el formulario) y filter (dato opcional para seleccionar una opción o filtrar los datos).
 *   Retorno: ninguno.
 */
+
 const fillSelect = async (filename, action, select, filter = undefined) => {
     // Se verifica si el filtro contiene un objeto para enviar a la API.
     const FORM = (typeof (filter) == 'object') ? filter : null;
@@ -117,6 +120,7 @@ const fillSelect = async (filename, action, select, filter = undefined) => {
 *   Parámetros: canvas (identificador de la etiqueta canvas), xAxis (datos para el eje X), yAxis (datos para el eje Y), legend (etiqueta para los datos) y title (título del gráfico).
 *   Retorno: ninguno.
 */
+
 const barGraph = (canvas, xAxis, yAxis, legend, title) => {
     // Se declara un arreglo para guardar códigos de colores en formato hexadecimal.
     let colors = [];
@@ -155,6 +159,7 @@ const barGraph = (canvas, xAxis, yAxis, legend, title) => {
 *   Parámetros: canvas (identificador de la etiqueta canvas), legends (valores para las etiquetas), values (valores de los datos) y title (título del gráfico).
 *   Retorno: ninguno.
 */
+
 const pieGraph = (canvas, legends, values, title) => {
     // Se declara un arreglo para guardar códigos de colores en formato hexadecimal.
     let colors = [];
@@ -188,6 +193,7 @@ const pieGraph = (canvas, legends, values, title) => {
 *   Parámetros: ninguno.
 *   Retorno: ninguno.
 */
+
 const logOut = async () => {
     // Se muestra un mensaje de confirmación y se captura la respuesta en una constante.
     const RESPONSE = await confirmAction('¿Está seguro de cerrar la sesión?');
@@ -209,6 +215,7 @@ const logOut = async () => {
 *   Parámetros: filename (nombre del archivo), action (accion a realizar) y form (objeto opcional con los datos que serán enviados al servidor).
 *   Retorno: constante tipo objeto con los datos en formato JSON.
 */
+
 const fetchData = async (filename, action, form = null) => {
     // Se define una constante tipo objeto para establecer las opciones de la petición.
     const OPTIONS = {};
