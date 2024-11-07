@@ -12,8 +12,6 @@ const SAVE_MODAL = new bootstrap.Modal('#saveModal'),
 const SAVE_FORM = document.getElementById('saveForm'),
     ID_MARCA = document.getElementById('idMarca'),
     NOMBRE_MARCA = document.getElementById('NombreMarca');
-// Se establece el título de la página web.
-document.querySelector('title').textContent = 'Departamentos';
 
 // Método del evento para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', () => {

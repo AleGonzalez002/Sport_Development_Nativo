@@ -12,9 +12,7 @@ const SAVE_MODAL = new bootstrap.Modal('#saveModal'),
 const SAVE_FORM = document.getElementById('saveForm'),
     ID_GENERO = document.getElementById('idGenero'),
     NOMBRE_GENERO = document.getElementById('NombreGenero');
-// Se establece el título de la página web.
-document.querySelector('title').textContent = 'Departamentos';
-
+    
 // Método del evento para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', () => {
     // Llamada a la función para mostrar el encabezado y pie del documento.

@@ -8,4 +8,3 @@ define('SERVER', 'localhost');
 define('DATABASE', 'sport');
 define('USERNAME', 'root');
 define('PASSWORD', '');
-?>

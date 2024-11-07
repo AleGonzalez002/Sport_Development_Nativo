@@ -44,10 +44,10 @@ const loadTemplate = async () => {
                                     <a class="nav-link text-white" href="historial.html"><i class="bi bi-hourglass-split"></i> Historial</a>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown" aria-expanded="false">Cuenta: <b>${DATA.name}</b></a>
-                                        <ul class="dropdown-menu" style="background-color: #245C9D;">
-                                            <li><a class="nav-link text-white" href="perfil.html"><i class="bi bi-person"></i> Editar Perfil</a></li>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item text-dark" href="perfil.html">Editar perfil</a></li>
                                             <li><hr class="dropdown-divider text-dark"></li>
-                                            <li> <a class="nav-link text-white" href="#" onclick="logOut()"><i class="bi bi-box-arrow-left"></i> Cerrar sesión</a></li>
+                                            <li><a class="dropdown-item text-dark" href="#" onclick="logOut()">Cerrar sesión</a></li>
                                         </ul>
                                     </li>
                                 </div>

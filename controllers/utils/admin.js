@@ -11,7 +11,7 @@ MAIN.style.paddingTop = '75px';
 MAIN.style.paddingBottom = '100px';
 MAIN.classList.add('container');
 // Se establece el título de la página web.
-document.querySelector('title').textContent = 'Sport Development - Dashboard';
+document.querySelector('title').textContent = 'Sport Development - Private';
 // Constante para establecer el elemento del título principal.
 const MAIN_TITLE = document.getElementById('mainTitle');
 MAIN_TITLE.classList.add('text-center', 'py-3');
@@ -32,12 +32,12 @@ const loadTemplate = async () => {
                 <header>
                     <nav class="navbar fixed-top navbar-expand-lg" style="background-color: #245C9D;">
                         <div class="container">
-                            <a class="navbar-brand text-white" href="dashboard.html">
+                            <a class="navbar-brand text-white border-white" href="dashboard.html">
                                 <img src="../../resources/img/logo.png" alt="CoffeeShop" width="50">
                                 Sport Development
                             </a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
+                            <button class="navbar-toggler text-white border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                                 <i class="bi bi-list"></i>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarContent">
                                 <ul class="navbar-nav ms-auto">
