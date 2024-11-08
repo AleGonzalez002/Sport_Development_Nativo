@@ -2,7 +2,7 @@
 // Se incluye la clase con las plantillas para generar reportes.
 require_once ('../../helpers/report.php');
 // Se incluyen las clases para el acceso a datos de coloress.
-require_once ('../../models/data/colores_data.php');
+require_once ('../../models/data/color_data.php');
 
 // Se instancia la clase para crear el reporte.
 $pdf = new Report;
@@ -34,7 +34,7 @@ if ($datacolores = $coloresmodel->readAll()) {
         $pdf->cell(50, 10, $colores['id_color'], 1, 0, 'C');
 
         // Nombre
-        $pdf->cell(140, 10, $pdf->encodeString($colores['nombre']), 1, 1, 'C'); // Cambiado a 140 y con salto de línea
+        $pdf->cell(140, 10, $pdf->encodeString($colores['nombre_color']), 1, 1, 'C'); // Cambiado a 140 y con salto de línea
     }
 } else {
     // Si no hay coloress registrados
@@ -43,4 +43,3 @@ if ($datacolores = $coloresmodel->readAll()) {
 
 // Se llama implícitamente al método footer() y se envía el documento al navegador web.
 $pdf->output('I', 'Colores.pdf');
-?>

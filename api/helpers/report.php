@@ -2,7 +2,7 @@
 // Se incluye la clase para generar archivos PDF.
 require_once ('../../libraries/fpdf185/fpdf.php');
 // Se incluyen las clases para el manejo de datos de administradores.
-require_once ('../../models/data/administrador_data.php');
+require_once ('../../models/data/administrator_data.php');
 
 /*
  *   Clase para definir las plantillas de los reportes del sitio privado.
@@ -68,8 +68,8 @@ class Report extends FPDF
     public function header()
     {
         // Se establece el logo.
-        $this->image('../../images/logo_letra.png', 15, 8, 40);
-        $this->image('../../images/logo_azul.png', 170, -20, 80);
+        $this->image(__DIR__ . '\..\..\resources\img\logo_letra.png', 15, 8, 40);
+        $this->image(__DIR__ . '\..\..\resources\img\logo_azul.png', 170, -20, 80);
         // Se ubica el título.
         $this->cell(20);
         $this->setFont('Arial', 'B', 15);
@@ -81,7 +81,7 @@ class Report extends FPDF
         // Se agrega un salto de línea para mostrar el contenido principal del documento.
         $this->ln(10);
         // Se establece el logo.
-        $this->image('../../images/logo_azul.png', -50, 245, 200);
+        $this->image(__DIR__ . '\..\..\resources\img\logo_azul.png', -50, 245, 200);
     }
 
     /*

@@ -2,7 +2,7 @@
 // Se incluye la clase con las plantillas para generar reportes.
 require_once ('../../helpers/report.php');
 // Se incluyen las clases para el acceso a datos de clientes.
-require_once ('../../models/data/cliente_data.php');
+require_once ('../../models/data/client_data.php');
 
 // Se instancia la clase para crear el reporte.
 $pdf = new Report;

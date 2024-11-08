@@ -2,7 +2,7 @@
 // Se incluye la clase con las plantillas para generar reportes.
 require_once ('../../helpers/report.php');
 // Se incluyen las clases para el manejo de datos de administradores.
-require_once ('../../models/data/administrador_data.php');
+require_once ('../../models/data/administrator_data.php');
 
 // Se instancia la clase para crear el reporte.
 $pdf = new Report;
