@@ -1,5 +1,5 @@
 // Constante para completar la ruta de la API.
-const CATEGORIA_API = 'services/public/categories.php';
+const CATEGORIA_API = 'services/public/category.php';
 // Constante para establecer el contenedor de categorías.
 const CATEGORIAS = document.getElementById('categorias');
 
@@ -18,15 +18,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Se recorre el conjunto de registros fila por fila a través del objeto row.
         DATA.dataset.forEach(row => {
             // Se establece la página web de destino con los parámetros.
-            let url = `producto.html?id=${row.id_categoria}&nombre=${row.nombre}`;
+            let url = `product.html?id=${row.id_categoria}&nombre=${row.nombre_categoria}`;
             // Se crean y concatenan las tarjetas con los datos de cada categoría.
             CATEGORIAS.innerHTML += `
                 <div class="col-sm-12 col-md-6 col-lg-3">
                     <div class="card mb-3">
-                        <img src="${SERVER_URL}images/categorias/${row.imagen}" class="card-img-top" alt="${row.nombre}">
+                        <img src="${SERVER_URL}images/categorias/${row.imagen_categoria}" class="card-img-top" alt="${row.nombre_categoria}">
                         <div class="card-body text-center">
-                            <h5 class="card-title">${row.nombre}</h5>
-                            <p class="card-text">${row.descripcion}</p>
+                            <h5 class="card-title">${row.nombre_categoria}</h5>
+                            <p class="card-text">${row.descripcion_categoria}</p>
                             <a href="${url}" class="btn btn-dark">Ver productos</a>
                         </div>
                     </div>

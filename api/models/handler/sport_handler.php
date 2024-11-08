@@ -19,10 +19,10 @@ class DeportesHandler
     public function searchRows()
     {
         $value = '%' . Validator::getSearchValue() . '%';
-        $sql = 'SELECT id_deporte, nombre
+        $sql = 'SELECT id_deporte, nombre_deporte
                 FROM tb_deportes
-                WHERE nombre LIKE ?
-                ORDER BY nombre';
+                WHERE nombre_deporte LIKE ?
+                ORDER BY nombre_deporte';
         $params = array($value);
         return Database::getRows($sql, $params);
     }
@@ -31,7 +31,7 @@ class DeportesHandler
     // Este CreateRow funciona para crear nuevos registros dentro de la base de datos y web
     public function createRow()
     {
-        $sql = 'INSERT INTO tb_deportes(nombre)
+        $sql = 'INSERT INTO tb_deportes(nombre_deporte)
                 VALUES(?)';
         $params = array($this->nombre);
         return Database::executeRow($sql, $params);
@@ -39,7 +39,7 @@ class DeportesHandler
     //Llamar los datos de la base de datos 
     public function readAll()
     {
-        $sql = 'SELECT id_deporte, nombre
+        $sql = 'SELECT id_deporte, nombre_deporte
             FROM tb_deportes';
         return Database::getRows($sql);
     }
@@ -47,7 +47,7 @@ class DeportesHandler
     //Este ReadOne funcióna para cargar los datos dentro de los campos del modal
     public function readOne()
     {
-        $sql = 'SELECT id_deporte, nombre
+        $sql = 'SELECT id_deporte, nombre_deporte
             FROM tb_deportes
             WHERE id_deporte = ?';
         $params = array($this->id);
@@ -58,7 +58,7 @@ class DeportesHandler
     public function updateRow()
     {
         $sql = 'UPDATE tb_deportes
-                SET nombre = ?
+                SET nombre_deporte = ?
                 WHERE id_deporte = ?';
         $params = array($this->nombre, $this->id);
         return Database::executeRow($sql, $params);

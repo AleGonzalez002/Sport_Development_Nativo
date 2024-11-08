@@ -19,10 +19,10 @@ class ColoresHandler
     public function searchRows()
     {
         $value = '%' . Validator::getSearchValue() . '%';
-        $sql = 'SELECT id_color, nombre
+        $sql = 'SELECT id_color, nombre_color
                 FROM tb_colores
-                WHERE nombre LIKE ?
-                ORDER BY nombre';
+                WHERE nombre_color LIKE ?
+                ORDER BY nombre_color';
         $params = array($value);
         return Database::getRows($sql, $params);
     }
@@ -31,7 +31,7 @@ class ColoresHandler
     // Este CreateRow funciona para crear nuevos registros dentro de la base de datos y web
     public function createRow()
     {
-        $sql = 'INSERT INTO tb_colores(nombre)
+        $sql = 'INSERT INTO tb_colores(nombre_color)
                 VALUES(?)';
         $params = array($this->nombre);
         return Database::executeRow($sql, $params);
@@ -39,7 +39,7 @@ class ColoresHandler
     //Llamar los datos de la base de datos 
     public function readAll()
     {
-        $sql = 'SELECT id_color, nombre
+        $sql = 'SELECT id_color, nombre_color
             FROM tb_colores';
         return Database::getRows($sql);
     }
@@ -47,7 +47,7 @@ class ColoresHandler
     //Este ReadOne funcióna para cargar los datos dentro de los campos del modal
     public function readOne()
     {
-        $sql = 'SELECT id_color, nombre
+        $sql = 'SELECT id_color, nombre_color
             FROM tb_colores
             WHERE id_color = ?';
         $params = array($this->id);
@@ -58,7 +58,7 @@ class ColoresHandler
     public function updateRow()
     {
         $sql = 'UPDATE tb_colores
-                SET nombre = ?
+                SET nombre_color = ?
                 WHERE id_color = ?';
         $params = array($this->nombre, $this->id);
         return Database::executeRow($sql, $params);

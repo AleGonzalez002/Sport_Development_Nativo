@@ -81,16 +81,16 @@ const fillTable = async (form = null) => {
             // Se crean y concatenan las filas de la tabla con los datos de cada registro.
             TABLE_BODY.innerHTML += `
                 <tr>
-                    <td>${row.apellido}</td>
-                    <td>${row.nombre}</td>
+                    <td>${row.apellido_administrador}</td>
+                    <td>${row.nombre_administrador}</td>
                     <td>${row.correo_administrador}</td>
                     <td>${row.alias_administrador}</td>
                     <td>
-                        <button type="button" class="btn btn-success" onclick="openUpdate(${row.id_admin})">
+                        <button type="button" class="btn btn-success" onclick="openUpdate(${row.id_administrador})">
                             <i class="bi bi-pencil-fill"></i>
                         </button>
                         <div class="py-1"></div>
-                        <button type="button" class="btn btn-danger" onclick="openDelete(${row.id_admin})">
+                        <button type="button" class="btn btn-danger" onclick="openDelete(${row.id_administrador})">
                             <i class="bi bi-trash-fill"></i>
                         </button>
                     </td>

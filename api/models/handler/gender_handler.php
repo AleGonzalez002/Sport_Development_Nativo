@@ -19,10 +19,10 @@ class GenerosHandler
     public function searchRows()
     {
         $value = '%' . Validator::getSearchValue() . '%';
-        $sql = 'SELECT id_genero, nombre
+        $sql = 'SELECT id_genero, nombre_genero
                 FROM tb_generos
-                WHERE nombre LIKE ?
-                ORDER BY nombre';
+                WHERE nombre_genero LIKE ?
+                ORDER BY nombre_genero';
         $params = array($value);
         return Database::getRows($sql, $params);
     }
@@ -31,7 +31,7 @@ class GenerosHandler
     // Este CreateRow funciona para crear nuevos registros dentro de la base de datos y web
     public function createRow()
     {
-        $sql = 'INSERT INTO tb_generos(nombre)
+        $sql = 'INSERT INTO tb_generos(nombre_genero)
                 VALUES(?)';
         $params = array($this->nombre);
         return Database::executeRow($sql, $params);
@@ -39,7 +39,7 @@ class GenerosHandler
     //Llamar los datos de la base de datos 
     public function readAll()
     {
-        $sql = 'SELECT id_genero, nombre
+        $sql = 'SELECT id_genero, nombre_genero
             FROM tb_generos';
         return Database::getRows($sql);
     }
@@ -47,7 +47,7 @@ class GenerosHandler
     //Este ReadOne funcióna para cargar los datos dentro de los campos del modal
     public function readOne()
     {
-        $sql = 'SELECT id_genero, nombre
+        $sql = 'SELECT id_genero, nombre_genero
             FROM tb_generos
             WHERE id_genero = ?';
         $params = array($this->id);
@@ -58,7 +58,7 @@ class GenerosHandler
     public function updateRow()
     {
         $sql = 'UPDATE tb_generos
-                SET nombre = ?
+                SET nombre_genero = ?
                 WHERE id_genero = ?';
         $params = array($this->nombre, $this->id);
         return Database::executeRow($sql, $params);

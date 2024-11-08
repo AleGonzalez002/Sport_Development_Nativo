@@ -2,7 +2,7 @@
 // Se incluye la clase para generar archivos PDF.
 require_once('../../libraries/fpdf185/fpdf.php');
 // Se incluyen las clases para el manejo de datos de administradores.
-require_once('../../models/data/cliente_data.php');
+require_once('../../models/data/client_data.php');
 
 /*
  *   Clase para definir las plantillas de los reportes del sitio privado.

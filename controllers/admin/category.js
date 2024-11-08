@@ -78,9 +78,9 @@ const fillTable = async (form = null) => {
             // Se crean y concatenan las filas de la tabla con los datos de cada registro.
             TABLE_BODY.innerHTML += `
                 <tr>
-                    <td><img src="../../api/images/categorias/${row.imagen}" height="120"></td>
-                    <td>${row.nombre}</td>
-                    <td>${row.descripcion}</td>
+                    <td><img src="../../api/images/categorias/${row.imagen_categoria}" height="120"></td>
+                    <td>${row.nombre_categoria}</td>
+                    <td>${row.descripcion_categoria}</td>
                     <td>
                         <button type="button" class="btn btn-success" onclick="openUpdate(${row.id_categoria})">
                             <i class="bi bi-pencil-fill"></i>

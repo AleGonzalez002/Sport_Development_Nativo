@@ -1,5 +1,5 @@
 // Constante para completar la ruta de la API.
-const PRODUCTO_API = 'services/public/producto.php';
+const PRODUCTO_API = 'services/public/product.php';
 // Constante tipo objeto para obtener los parámetros disponibles en la URL.
 const PARAMS = new URLSearchParams(location.search);
 const PRODUCTOS = document.getElementById('productos');
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                             <li class="list-group-item">Existencias ${row.existencias_producto}</li>
                         </ul>
                         <div class="card-body text-center">
-                            <a href="detalle.html?id=${row.id_producto}" class="btn btn-dark py-3">Agregar a carrito</a>
+                            <a href="product_detail.html?id=${row.id_producto}" class="btn btn-dark py-3">Agregar a carrito</a>
                         </div>
                     </div>
                 </div>

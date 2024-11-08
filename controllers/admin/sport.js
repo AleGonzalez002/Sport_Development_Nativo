@@ -76,13 +76,13 @@ const fillTable = async (form = null) => {
             // Se crean y concatenan las filas de la tabla con los datos de cada registro.
             TABLE_BODY.innerHTML += `
                 <tr>
-                    <td>${row.nombre}</td>
+                    <td>${row.nombre_deporte}</td>
                     <td>
-                <button type="button" class="btn btn-success me-2 mb-2 mb-sm-2" onclick="openUpdate(${row.ID_DEPORTE})">
+                <button type="button" class="btn btn-success me-2 mb-2 mb-sm-2" onclick="openUpdate(${row.id_deporte})">
                             <i class="bi bi-pencil-fill"></i>
                         </button>
                         <div class="py-1"></div>
-                <button type="button" class="btn btn-danger me-2 mb-2 mb-sm-2" onclick="openDelete(${row.ID_DEPORTE})">
+                <button type="button" class="btn btn-danger me-2 mb-2 mb-sm-2" onclick="openDelete(${row.id_deporte})">
                     <i class="bi bi-trash-fill"></i>
                 </button>                
                     </td>
