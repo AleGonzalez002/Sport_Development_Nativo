@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Llamada a la función para mostrar el encabezado y pie del documento.
     loadTemplate();
     // Se establece el título del contenido principal.
-    MAIN_TITLE.textContent = 'Recupera contraseña';
+    MAIN_TITLE.textContent = 'Recuperar contraseña';
 
     // Manejar el evento de mostrar el modal
     const passwordModal = new bootstrap.Modal(document.getElementById('passwordModal'));
@@ -23,7 +23,7 @@ document.getElementById('recoveryForm').addEventListener('submit', function (eve
 
     let formData = new FormData(this);
 
-    fetch('../../api/helpers/recuperacion.php', {
+    fetch('../../api/helpers/recovery.php', {
         method: 'POST',
         body: formData
     })
