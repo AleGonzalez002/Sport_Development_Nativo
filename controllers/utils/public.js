@@ -29,25 +29,38 @@ const loadTemplate = async () => {
         if (!location.pathname.endsWith('login.html')) {
             // Se agrega el encabezado de la página web antes del contenido principal.
             MAIN.insertAdjacentHTML('beforebegin', `
-                <<header>
-                <nav class="navbar fixed-top navbar-expand-lg" style="background-color: #245C9D;">
-                    <div class="container text-white border-white">
-                            <a class="navbar-brand text-white border-white" href="index.html"><img class="px-2" src="../../resources/img/logo.png" height="50" alt="CoffeeShop">Sport Development</a>
-                            <button class="navbar-toggler text-white border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="bi bi-list"></i>
+                <header>
+                    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #245C9D;">
+                        <div class="container">
+                            <a class="navbar-brand d-flex align-items-center text-white" href="index.html">
+                                <img src="../../resources/img/logo.png" height="50" alt="CoffeeShop" class="px-2">
+                                <span>Sport Development</span>
+                            </a>
+                            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="bi bi-list"></i>
                             </button>
-                            <div class="collapse navbar-collapse text-white" id="navbarNavAltMarkup">
-                                <div class="navbar-nav ms-auto text-white">
-                                    <a class="nav-link text-white" href="index.html"><i class="bi bi-shop"></i> Catálogo</a>
-                                    <a class="nav-link text-white" href="cart.html"><i class="bi bi-cart"></i> Carrito</a>
-                                    <a class="nav-link text-white" href="order.html"><i class="bi bi-truck"></i> Pedidos</a>
-                                    <a class="nav-link text-white" href="history.html"><i class="bi bi-hourglass-split"></i> Historial</a>
+                            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                <div class="navbar-nav ms-auto flex-lg-row flex-column">
+                                    <a class="nav-link text-white" href="index.html">
+                                        <i class="bi bi-shop"></i> Catálogo
+                                    </a>
+                                    <a class="nav-link text-white" href="cart.html">
+                                        <i class="bi bi-cart"></i> Carrito
+                                    </a>
+                                    <a class="nav-link text-white" href="order.html">
+                                        <i class="bi bi-truck"></i> Pedidos
+                                    </a>
+                                    <a class="nav-link text-white" href="history.html">
+                                        <i class="bi bi-hourglass-split"></i> Historial
+                                    </a>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown" aria-expanded="false">Cuenta: <b>${DATA.name}</b></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item text-dark" href="profile.html">Editar perfil</a></li>
-                                            <li><hr class="dropdown-divider text-dark"></li>
-                                            <li><a class="dropdown-item text-dark" href="#" onclick="logOut()">Cerrar sesión</a></li>
+                                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Cuenta: <strong>${DATA.name}</strong>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="profile.html"><i class="bi bi-pencil"></i> Editar perfil</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item text-danger" href="#" onclick="logOut()"><i class="bi bi-box-arrow-right"></i> Cerrar sesión</a></li>
                                         </ul>
                                     </li>
                                 </div>
@@ -62,40 +75,52 @@ const loadTemplate = async () => {
     } else {
         // Se agrega el encabezado de la página web antes del contenido principal.
         MAIN.insertAdjacentHTML('beforebegin', `
-            <header>
-                <nav class="navbar fixed-top navbar-expand-lg" style="background-color: #245C9D;">
-                    <div class="container text-white">
-                        <a class="navbar-brand text-white border-white" href="index.html"><img class="px-2" src="../../resources/img/logo.png" height="50" alt="CoffeeShop">Sport Development</a>
-                        <button class="navbar-toggler text-white border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #245C9D;">
+                <div class="container">
+                    <a class="navbar-brand d-flex align-items-center text-white" href="index.html">
+                        <img src="../../resources/img/logo.png" height="50" alt="CoffeeShop" class="px-2">
+                        <span>Sport Development</span>
+                    </a>
+                    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="bi bi-list"></i>
-                        </button>
-                        <div class="collapse navbar-collapse text-white" id="navbarNavAltMarkup">
-                            <div class="navbar-nav ms-auto text-white">
-                                <a class="nav-link text-white" href="index.html"><i class="bi bi-shop"></i> Catálogo</a>
-                                <a class="nav-link text-white" href="register.html"><i class="bi bi-person"></i> Crear cuenta</a>
-                                <a class="nav-link text-white" href="login.html"><i class="bi bi-box-arrow-right"></i> Iniciar sesión</a>
-                            </div>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ms-auto flex-lg-row flex-column">
+                            <a class="nav-link text-white" href="index.html">
+                                <i class="bi bi-shop"></i> Catálogo
+                            </a>
+                            <a class="nav-link text-white" href="register.html">
+                                <i class="bi bi-person"></i> Crear cuenta
+                            </a>
+                            <a class="nav-link text-white" href="login.html">
+                                <i class="bi bi-box-arrow-right"></i> Iniciar sesión
+                            </a>
                         </div>
                     </div>
-                </nav>
-            </header>
+                </div>
+            </nav>
+        </header>
         `);
     }
     // Se agrega el pie de la página web después del contenido principal.
     MAIN.insertAdjacentHTML('afterend', `
-    <footer style="background-color: #333; margin-top: auto;">
-        <nav class="navbar bg-dark">
-            <div class="container">
-                <div>
-                    <h4 class="text-white">Sport Development</h4>
-                    <a class="text-white"><i class="bi bi-c-square text-white"></i> 2018-2024 Todos los derechos reservados</a>
+   <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Primera columna con el título y derechos reservados -->
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <h4 class="mb-2">Sport Development</h4>
+                    <p class="mb-0"><i class="bi bi-c-square"></i> 2018-2024 Todos los derechos reservados</p>
                 </div>
-                <div>
-                    <h4 class="text-white">Contáctanos</h4>
-                    <a class="text-white"><i class="bi bi-envelope text-white"></i> sportdevelopment@gmail.com</a>
+
+                <!-- Segunda columna con información de contacto -->
+                <div class="col-12 col-md-6">
+                    <h4 class="mb-2">Contáctanos</h4>
+                    <p class="mb-0"><i class="bi bi-envelope"></i> sportdevelopment@gmail.com</p>
                 </div>
             </div>
-        </nav>
+        </div>
     </footer>
     `);
 }

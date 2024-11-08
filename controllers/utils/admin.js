@@ -30,25 +30,29 @@ const loadTemplate = async () => {
             // Se agrega el encabezado de la página web antes del contenido principal.
             MAIN.insertAdjacentHTML('beforebegin', `
                 <header>
-                    <nav class="navbar fixed-top navbar-expand-lg" style="background-color: #245C9D;">
+                    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #245C9D;">
                         <div class="container">
-                            <a class="navbar-brand text-white border-white" href="dashboard.html">
-                                <img src="../../resources/img/logo.png" alt="CoffeeShop" width="50">
-                                Sport Development
+                            <!-- Logo y título del sitio -->
+                            <a class="navbar-brand d-flex align-items-center text-white" href="dashboard.html">
+                                <img src="../../resources/img/logo.png" alt="Sport Development" width="50" class="me-2">
+                                <span>Sport Development</span>
                             </a>
-                            <button class="navbar-toggler text-white border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                                 <i class="bi bi-list"></i>
+                            <!-- Botón para colapsar el menú en dispositivos pequeños -->
+                            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="bi bi-list"></i>
                             </button>
+
+                            <!-- Enlaces de navegación -->
                             <div class="collapse navbar-collapse" id="navbarContent">
                                 <ul class="navbar-nav ms-auto">
                                     <li class="nav-item">
                                         <a class="nav-link text-white" href="color.html">Colores</a>
                                     </li>
-                                     <li class="nav-item">
-                                        <a class="nav-link text-white" href="gender.html">Generos</a>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="gender.html">Géneros</a>
                                     </li>
                                     <li class="nav-item">
-                                    <a class="nav-link text-white" href="brand.html">Marcas</a>
+                                        <a class="nav-link text-white" href="brand.html">Marcas</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link text-white" href="product.html">Productos</a>
@@ -62,12 +66,16 @@ const loadTemplate = async () => {
                                     <li class="nav-item">
                                         <a class="nav-link text-white" href="client.html">Clientes</a>
                                     </li>
+
+                                    <!-- Dropdown para la cuenta de usuario -->
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown" aria-expanded="false">Cuenta: <b>${DATA.username}</b></a>
-                                        <ul class="dropdown-menu">
+                                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Cuenta: <strong>${DATA.username}</strong>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <li><a class="dropdown-item text-dark" href="profile.html">Editar perfil</a></li>
-                                            <li><hr class="dropdown-divider text-dark"></li>
-                                            <li><a class="dropdown-item text-dark" href="#" onclick="logOut()">Cerrar sesión</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item text-danger" href="#" onclick="logOut()">Cerrar sesión</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -78,19 +86,22 @@ const loadTemplate = async () => {
             `);
             // Se agrega el pie de la página web después del contenido principal.
             MAIN.insertAdjacentHTML('afterend', `
-               <footer style="background-color: #333; margin-top: auto;">
-                    <nav class="navbar bg-dark">
-                        <div class="container">
-                            <div>
-                                <h4 class="text-white">Sport Development</h4>
-                                <a class="text-white"><i class="bi bi-c-square text-white"></i> 2018-2024 Todos los derechos reservados</a>
+              <footer class="bg-dark text-white py-4">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Primera columna con el título y derechos reservados -->
+                            <div class="col-12 col-md-6 mb-3 mb-md-0">
+                                <h4 class="mb-2">Sport Development</h4>
+                                <p class="mb-0"><i class="bi bi-c-square"></i> 2018-2024 Todos los derechos reservados</p>
                             </div>
-                            <div>
-                                <h4 class="text-white">Contáctanos</h4>
-                                <a class="text-white"><i class="bi bi-envelope text-white"></i> sportdevelopment@gmail.com</a>
+
+                            <!-- Segunda columna con información de contacto -->
+                            <div class="col-12 col-md-6">
+                                <h4 class="mb-2">Contáctanos</h4>
+                                <p class="mb-0"><i class="bi bi-envelope"></i> sportdevelopment@gmail.com</p>
                             </div>
                         </div>
-                    </nav>
+                    </div>
                 </footer>
             `);
         } else {
@@ -114,20 +125,23 @@ const loadTemplate = async () => {
             `);
             // Se agrega el pie de la página web después del contenido principal.
             MAIN.insertAdjacentHTML('afterend', `
-               <footer style="background-color: #333; margin-top: auto;">
-                    <nav class="navbar bg-dark">
-                        <div class="container">
-                            <div>
-                                <h4 class="text-white">Sport Development</h4>
-                                <a class="text-white"><i class="bi bi-c-square text-white"></i> 2018-2024 Todos los derechos reservados</a>
-                            </div>
-                            <div>
-                                <h4 class="text-white">Contáctanos</h4>
-                                <a class="text-white"><i class="bi bi-envelope text-white"></i> sportdevelopment@gmail.com</a>
-                            </div>
+              <footer class="bg-dark text-white py-4">
+                <div class="container">
+                    <div class="row">
+                        <!-- Primera columna con el título y derechos reservados -->
+                        <div class="col-12 col-md-6 mb-3 mb-md-0">
+                            <h4 class="mb-2">Sport Development</h4>
+                            <p class="mb-0"><i class="bi bi-c-square"></i> 2018-2024 Todos los derechos reservados</p>
                         </div>
-                    </nav>
-                </footer>
+
+                        <!-- Segunda columna con información de contacto -->
+                        <div class="col-12 col-md-6">
+                            <h4 class="mb-2">Contáctanos</h4>
+                            <p class="mb-0"><i class="bi bi-envelope"></i> sportdevelopment@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
             `);
         } else {
             location.href = 'index.html';
