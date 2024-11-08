@@ -164,7 +164,6 @@ const graficoPastelCategorias = async () => {
     }
 }
 
-
 const graficoCrecimientoClientes = async () => {
     const DATA = await fetchData(GRAFICO_API, 'cantidadClientePorFecha');
 
@@ -346,8 +345,8 @@ const graficoVentas = async () => {
     }
 };
 
-//Diseño de los graficos
 
+//Diseño de los graficos
 
 // Función para generar una paleta de colores para el gráfico de pastel a partir de un color base en formato hexadecimal.
 function generatePieColors(baseColor, count) {
@@ -521,4 +520,3 @@ function hslToRgb(hsl) {
 
     return { r: Math.round(r * 255), g: Math.round(g * 255), b: Math.round(b * 255) };
 }
-

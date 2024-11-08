@@ -1,4 +1,5 @@
 <?php
+
 // Se incluye la clase con las plantillas para generar reportes.
 require_once ('../../helpers/report_template.php');
 // Se incluyen las clases para el acceso a datos de clientes.
@@ -55,4 +56,3 @@ if ($dataClientes = $clienteModel->readAll()) {
 
 // Se llama implícitamente al método footer() y se envía el documento al navegador web.
 $pdf->output('I', 'Clientes.pdf');
-?>

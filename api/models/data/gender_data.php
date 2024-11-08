@@ -1,4 +1,5 @@
 <?php
+
 // Se incluye la clase para validar los datos de entrada.
 require_once ('../../helpers/validator.php');
 // Se incluye la clase padre.
@@ -55,4 +56,3 @@ class GeneroData extends GeneroHandler
         return $this->data_error;
     }
 }
-

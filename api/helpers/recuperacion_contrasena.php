@@ -1,4 +1,5 @@
 <?php
+
 require __DIR__ . '/../../api/helpers/database.php';
 
 header('Content-Type: application/json');

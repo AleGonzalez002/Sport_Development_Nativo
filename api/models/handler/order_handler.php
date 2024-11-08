@@ -1,14 +1,18 @@
 <?php
+
 // Se incluye la clase para trabajar con la base de datos.
-require_once ('../../helpers/database.php');
+require_once('../../helpers/database.php');
+
 /*
  *	Clase para manejar el comportamiento de los datos de las tablas PEDIDO y DETALLE_PEDIDO.
  */
+
 class PedidoHandler
 {
     /*
      *   Declaración de atributos para el manejo de datos.
      */
+
     protected $id_pedido = null;
     protected $id_detalle = null;
     protected $cliente = null;
@@ -81,9 +85,9 @@ class PedidoHandler
 
     // Método para obtener los productos que se encuentran en el carrito de compras.
     public function readDetail()
-{
-    $this->estado = 'Encamino';
-    $sql = 'SELECT id_detalle, nombre_producto, tb_detalle_pedidos.precio_producto, 
+    {
+        $this->estado = 'Encamino';
+        $sql = 'SELECT id_detalle, nombre_producto, tb_detalle_pedidos.precio_producto, 
                    tb_detalle_pedidos.cantidad_producto, tb_productos.imagen_producto, 
                    tb_pedidos.fecha_registro, tb_pedidos.direccion_pedido
             FROM tb_detalle_pedidos
@@ -94,9 +98,9 @@ class PedidoHandler
                 FROM tb_pedidos 
                 WHERE estado_pedido = ? AND id_cliente = ?
             )';
-    $params = array($this->estado, $_SESSION['idCliente']);
-    return Database::getRows($sql, $params);
-}
+        $params = array($this->estado, $_SESSION['idCliente']);
+        return Database::getRows($sql, $params);
+    }
 
     // Método para finalizar un pedido por parte del cliente.
     public function finishOrder()
@@ -106,7 +110,7 @@ class PedidoHandler
             SET estado_pedido = ?
             WHERE id_pedido = ?';
         $params = array($this->estado, $_SESSION['idPedido']);
-    
+
         // Actualizar el estado del pedido a 'Entregado'
         if (Database::executeRow($sql, $params)) {
             return true;
@@ -114,7 +118,6 @@ class PedidoHandler
             return false;
         }
     }
-    
 
     // Método para actualizar la cantidad de un producto agregado al carrito de compras.
     public function updateDetail()
@@ -143,6 +146,4 @@ class PedidoHandler
         $params = array('Historial', 'Entregado');
         return Database::executeRow($sql, $params);
     }
-
-
 }

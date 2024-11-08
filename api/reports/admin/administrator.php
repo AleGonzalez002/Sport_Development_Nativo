@@ -1,4 +1,5 @@
 <?php
+
 // Se incluye la clase con las plantillas para generar reportes.
 require_once ('../../helpers/report_template.php');
 // Se incluyen las clases para el manejo de datos de administradores.
@@ -43,4 +44,3 @@ if ($dataAdministradores = $adminData->readAll()) {
 
 // Se llama implícitamente al método footer() y se envía el documento al navegador web.
 $pdf->output('I', 'Administradores.pdf');
-?>

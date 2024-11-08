@@ -1,4 +1,5 @@
 <?php
+
 // Incluir archivos necesarios
 require_once ('../../helpers/receipt_template.php');
 require_once ('../../models/data/cart_data.php');

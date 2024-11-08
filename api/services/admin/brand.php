@@ -1,4 +1,5 @@
 <?php
+
 // Se incluye la clase del modelo.
 require_once ('../../models/data/brand_data.php');
 

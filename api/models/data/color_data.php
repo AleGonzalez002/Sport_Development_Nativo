@@ -1,4 +1,5 @@
 <?php
+
 // Se incluye la clase para validar los datos de entrada.
 require_once ('../../helpers/validator.php');
 // Se incluye la clase padre.
@@ -49,13 +50,9 @@ class ColorData extends ColorHandler
         }
     }
 
-
-
-
     // Método para obtener el error de los datos.
     public function getDataError()
     {
         return $this->data_error;
     }
 }
-

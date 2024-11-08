@@ -1,4 +1,5 @@
 <?php
+
 // Se incluye la clase del modelo.
 require_once ('../../models/data/cart_data.php');
 
@@ -188,4 +189,3 @@ if (isset($_GET['action'])) {
 } else {
     print (json_encode('Recurso no disponible'));
 }
-

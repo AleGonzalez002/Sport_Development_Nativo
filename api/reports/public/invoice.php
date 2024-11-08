@@ -1,4 +1,5 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -62,4 +63,3 @@ try {
 } catch (Exception $e) {
     echo "No se pudo enviar el correo. Error: {$mail->ErrorInfo}";
 }
-?>
