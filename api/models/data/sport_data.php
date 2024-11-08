@@ -6,7 +6,7 @@ require_once ('../../models/handler/sport_handler.php');
 /*
  *  Clase para manejar el encapsulamiento de los datos de la tabla USUARIO.
  */
-class DeportesData extends DeportesHandler
+class DeporteData extends DeporteHandler
 {
     // Atributo genérico para manejo de errores.
     private $data_error = null;

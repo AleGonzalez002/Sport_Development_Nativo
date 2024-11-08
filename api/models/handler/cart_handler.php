@@ -5,7 +5,7 @@ require_once ('../../helpers/database.php');
 /*
  *   Clase para manejar el comportamiento de los datos de las tablas PEDIDO y DETALLE_PEDIDO.
  */
-class PedidoHandler
+class CarritoHandler
 {
     /*
      *   Declaración de atributos para el manejo de datos.

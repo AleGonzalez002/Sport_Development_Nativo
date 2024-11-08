@@ -6,7 +6,7 @@ require_once ('../../models/handler/color_handler.php');
 /*
  *  Clase para manejar el encapsulamiento de los datos de la tabla USUARIO.
  */
-class ColoresData extends ColoresHandler
+class ColorData extends ColorHandler
 {
     // Atributo genérico para manejo de errores.
     private $data_error = null;

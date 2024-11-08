@@ -9,7 +9,7 @@ $pdf = new Report;
 $pdf->startReport('Marcas Registradas');
 
 // Se instancia el modelo marca para obtener los datos.
-$marcamodel = new MarcasData;
+$marcamodel = new MarcaData;
 // Se verifica si existen registros para mostrar, de lo contrario se imprime un mensaje.
 if ($dataMarcas = $marcamodel->readAll()) {
     // Se establece un color de relleno para los encabezados.

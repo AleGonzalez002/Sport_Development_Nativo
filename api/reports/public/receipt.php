@@ -9,7 +9,7 @@ $pdf = new Report;
 $pdf->startReport('Comprobante de compra');
 
 // Se instancia el modelo Pedido para obtener los datos.
-$pedido = new PedidoData;
+$pedido = new CarritoData;
 $clienteEmail = null; // Variable para almacenar el correo electrónico del cliente
 
 if ($dataPedidos = $pedido->readByClientAndStatus($_SESSION['idCliente'], 'Pendiente')) {
@@ -56,7 +56,7 @@ if ($dataPedidos = $pedido->readByClientAndStatus($_SESSION['idCliente'], 'Pendi
         $pdf->cell(30, 12, 'Cantidad', 0, 0, 'C', 1);
         $pdf->cell(30, 12, 'Precio (US$)', 0, 1, 'C', 1);
 
-        $detallePedido = new PedidoData;
+        $detallePedido = new CarritoData;
         if ($detallePedido->setIdPedido($rowPedido['id_pedido'])) {
             if ($dataDetalles = $detallePedido->readByPedido()) {
 

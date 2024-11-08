@@ -6,7 +6,7 @@ require_once ('../../models/handler/gender_handler.php');
 /*
  *  Clase para manejar el encapsulamiento de los datos de la tabla USUARIO.
  */
-class GenerosData extends GenerosHandler
+class GeneroData extends GeneroHandler
 {
     // Atributo genérico para manejo de errores.
     private $data_error = null;

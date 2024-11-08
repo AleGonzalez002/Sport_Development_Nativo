@@ -10,7 +10,7 @@ $pdf->startReport('Generos Registrados');
 
 
 // Se instancia el modelo genero para obtener los datos.
-$generomodel = new GenerosData;
+$generomodel = new GeneroData;
 // Se verifica si existen registros para mostrar, de lo contrario se imprime un mensaje.
 if ($dataGenero = $generomodel->readAll()) {
     // Se establece un color de relleno para los encabezados.

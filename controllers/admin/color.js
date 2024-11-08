@@ -1,5 +1,5 @@
 // Constantes para completar las rutas de la API.
-const DEPARTAMENTO_API = 'services/admin/color.php';
+const COLOR_API = 'services/admin/color.php';
 // Constante para establecer el formulario de buscar.
 const SEARCH_FORM = document.getElementById('searchForm');
 // Constantes para establecer el contenido de la tabla.
@@ -42,7 +42,7 @@ SAVE_FORM.addEventListener('submit', async (event) => {
     // Constante tipo objeto con los datos del formulario.
     const FORM = new FormData(SAVE_FORM);
     // Petición para guardar los datos del formulario.
-    const DATA = await fetchData(DEPARTAMENTO_API, action, FORM);
+    const DATA = await fetchData(COLOR_API, action, FORM);
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
         // Se cierra la caja de diálogo.
@@ -68,7 +68,7 @@ const fillTable = async (form = null) => {
     // Se verifica la acción a realizar.
     (form) ? action = 'searchRows' : action = 'readAll';
     // Petición para obtener los registros disponibles.
-    const DATA = await fetchData(DEPARTAMENTO_API, action, form);
+    const DATA = await fetchData(COLOR_API, action, form);
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
         // Se recorre el conjunto de registros fila por fila.
@@ -121,7 +121,7 @@ const openUpdate = async (id) => {
     const FORM = new FormData();
     FORM.append('idDepartamento', id);
     // Petición para obtener los datos del registro solicitado.
-    const DATA = await fetchData(DEPARTAMENTO_API, 'readOne', FORM);
+    const DATA = await fetchData(COLOR_API, 'readOne', FORM);
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
         // Se muestra la caja de diálogo con su título.
@@ -152,7 +152,7 @@ const openDelete = async (id) => {
         const FORM = new FormData();
         FORM.append('idDepartamento', id);
         // Petición para eliminar el registro seleccionado.
-        const DATA = await fetchData(DEPARTAMENTO_API, 'deleteRow', FORM);
+        const DATA = await fetchData(COLOR_API, 'deleteRow', FORM);
         // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
         if (DATA.status) {
             // Se muestra un mensaje de éxito.

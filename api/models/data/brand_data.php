@@ -6,7 +6,7 @@ require_once ('../../models/handler/brand_handler.php');
 /*
  *  Clase para manejar el encapsulamiento de los datos de la tabla USUARIO.
  */
-class MarcasData extends MarcasHandler
+class MarcaData extends MarcaHandler
 {
     // Atributo genérico para manejo de errores.
     private $data_error = null;

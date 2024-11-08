@@ -1,5 +1,5 @@
 // Constante para completar la ruta de la API.
-const ORDER_API = 'services/public/order.php';
+const PEDIDO_API = 'services/public/order.php';
 // Constante para establecer el cuerpo de la tabla.
 const TABLE_BODY = document.getElementById('tableBody');
 // Constante para establecer la caja de diálogo de cambiar producto.
@@ -24,7 +24,7 @@ ITEM_FORM.addEventListener('submit', async (event) => {
     // Constante tipo objeto con los datos del formulario.
     const FORM = new FormData(ITEM_FORM);
     // Petición para actualizar la cantidad de producto.
-    const DATA = await fetchData(ORDER_API, 'updateDetail', FORM);
+    const DATA = await fetchData(PEDIDO_API, 'updateDetail', FORM);
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
         // Se actualiza la tabla para visualizar los cambios.
@@ -45,7 +45,7 @@ ITEM_FORM.addEventListener('submit', async (event) => {
 */
 async function readDetail() {
     // Petición para obtener los datos del pedido en proceso.
-    const DATA = await fetchData(ORDER_API, 'readDetail');
+    const DATA = await fetchData(PEDIDO_API, 'readDetail');
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
         // Se inicializa el cuerpo de la tabla.
@@ -119,7 +119,7 @@ async function deleteOrder(idPedido) {
     // Se verifica la respuesta del mensaje.
     if (RESPONSE) {
         // Petición para finalizar el pedido en proceso.
-        const DATA = await fetchData(ORDER_API, 'deleteOrder', { id_pedido: idPedido });
+        const DATA = await fetchData(PEDIDO_API, 'deleteOrder', { id_pedido: idPedido });
         // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
         if (DATA.status) {
             sweetAlert(1, DATA.message, true, 'index.html');
@@ -144,7 +144,7 @@ async function openDelete(id) {
         const FORM = new FormData();
         FORM.append('idDetalle', id);
         // Petición para eliminar un producto del carrito de compras.
-        const DATA = await fetchData(ORDER_API, 'deleteDetail', FORM);
+        const DATA = await fetchData(PEDIDO_API, 'deleteDetail', FORM);
         // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
         if (DATA.status) {
             await sweetAlert(1, DATA.message, true);
@@ -167,7 +167,7 @@ async function finishOrder() {
         await new Promise(resolve => setTimeout(resolve, 1000)); // Esperar 5 segundos
 
         // Luego, petición para finalizar el pedido en proceso.
-        const DATA = await fetchData(ORDER_API, 'finishOrder');
+        const DATA = await fetchData(PEDIDO_API, 'finishOrder');
 
         // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
         if (DATA.status) {

@@ -11,7 +11,7 @@ $pdf->startReport('Colores Registrados');
 // Se instancia el modelo Cliente para obtener los datos.
 
 // Se instancia el modelo colores para obtener los datos.
-$coloresmodel = new ColoresData;
+$coloresmodel = new ColorData;
 // Se verifica si existen registros para mostrar, de lo contrario se imprime un mensaje.
 if ($datacolores = $coloresmodel->readAll()) {
     // Se establece un color de relleno para los encabezados.

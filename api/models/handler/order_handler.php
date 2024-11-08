@@ -4,7 +4,7 @@ require_once ('../../helpers/database.php');
 /*
  *	Clase para manejar el comportamiento de los datos de las tablas PEDIDO y DETALLE_PEDIDO.
  */
-class OrderHandler
+class PedidoHandler
 {
     /*
      *   Declaración de atributos para el manejo de datos.
