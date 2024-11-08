@@ -10,5 +10,13 @@
 
 ### -`Hacer buscador funcional`🔧
 
+### -`Unificar metodo de recuperacion con el de movil`🔧
+
+### -`Almacenar id de ordenes para que no se borren de el reporte`🔧
+
+### -`Hacer metodo de targeta`🔧
+
+### -`Hacer metodo de tracking`🔧
+
 
 
