@@ -1,12 +1,15 @@
 <?php
+
 /*
  *	Clase para validar todos los datos de entrada del lado del servidor.
  */
+
 class Validator
 {
     /*
      *   Atributos para manejar algunas validaciones.
      */
+
     private static $filename = null;
     private static $search_value = null;
     private static $password_error = null;

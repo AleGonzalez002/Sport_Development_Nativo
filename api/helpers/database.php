@@ -1,12 +1,15 @@
 <?php
+
 // Se incluyen las credenciales para conectar con la base de datos.
-require_once ('config.php');
+require_once('config.php');
 
 /*
  *   Clase para realizar las operaciones en la base de datos.
  */
+
 class Database
 {
+
     // Propiedades de la clase para manejar las acciones respectivas.
     private static $connection = null;
     private static $statement = null;
@@ -17,6 +20,7 @@ class Database
      *   Parámetros: $query (sentencia SQL) y $values (arreglo con los valores para la sentencia SQL).
      *   Retorno: booleano (true si la sentencia se ejecuta satisfactoriamente o false en caso contrario).
      */
+
     public static function executeRow($query, $values)
     {
         try {
@@ -38,6 +42,7 @@ class Database
      *   Parámetros: $query (sentencia SQL) y $values (arreglo con los valores para la sentencia SQL).
      *   Retorno: numérico entero (último valor de la llave primaria si la sentencia se ejecuta satisfactoriamente o 0 en caso contrario).
      */
+
     public static function getLastRow($query, $values)
     {
         if (self::executeRow($query, $values)) {
@@ -53,6 +58,7 @@ class Database
      *   Parámetros: $query (sentencia SQL) y $values (arreglo opcional con los valores para la sentencia SQL).
      *   Retorno: arreglo asociativo del registro si la sentencia SQL se ejecuta satisfactoriamente o false en caso contrario.
      */
+
     public static function getRow($query, $values = null)
     {
         if (self::executeRow($query, $values)) {
@@ -67,6 +73,7 @@ class Database
      *   Parámetros: $query (sentencia SQL) y $values (arreglo opcional con los valores para la sentencia SQL).
      *   Retorno: arreglo asociativo de los registros si la sentencia SQL se ejecuta satisfactoriamente o false en caso contrario.
      */
+
     public static function getRows($query, $values = null)
     {
         if (self::executeRow($query, $values)) {
@@ -81,6 +88,7 @@ class Database
      *   Parámetros: $code (código del error) y $message (mensaje original del error).
      *   Retorno: ninguno.
      */
+
     private static function setException($code, $message)
     {
         // Se asigna el mensaje del error original por si se necesita.
@@ -115,6 +123,7 @@ class Database
      *   Parámetros: ninguno.
      *   Retorno: error personalizado.
      */
+
     public static function getException()
     {
         return self::$error;
