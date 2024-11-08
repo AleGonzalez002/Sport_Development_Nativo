@@ -44,7 +44,7 @@ const graficoBarrasCategorias = async () => {
         // Se recorre el conjunto de registros fila por fila a través del objeto row.
         DATA.dataset.forEach(row => {
             // Se agregan los datos a los arreglos.
-            categorias.push(row.nombre);
+            categorias.push(row.nombre_categoria);
             cantidades.push(row.cantidad);
         });
 
@@ -107,7 +107,7 @@ const graficoPastelCategorias = async () => {
         // Se recorre el conjunto de registros fila por fila a través del objeto row.
         DATA.dataset.forEach(row => {
             // Se agregan los datos a los arreglos.
-            categorias.push(row.nombre);
+            categorias.push(row.nombre_categoria);
             porcentajes.push(row.porcentaje);
         });
 

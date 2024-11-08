@@ -1,12 +1,14 @@
 <?php
+
 // Se incluye la clase para trabajar con la base de datos.
 require_once ('../../helpers/database.php');
+
 /*
  *	Clase para manejar el comportamiento de los datos de los graficos.
  */
+
 class GraficoHandler
 {
-
     public function cantidadClientePorFecha()
     {
         $sql = 'SELECT DATE(fecha_registro) AS fecha, COUNT(id_cliente) AS cantidad
@@ -19,19 +21,19 @@ class GraficoHandler
 
     public function cantidadProductosCategoria()
     {
-        $sql = 'SELECT nombre, COUNT(id_producto) cantidad
+        $sql = 'SELECT nombre_categoria, COUNT(id_producto) cantidad
                 FROM tb_productos
                 INNER JOIN tb_categorias USING(id_categoria)
-                GROUP BY nombre ORDER BY cantidad DESC LIMIT 5';
+                GROUP BY nombre_categoria ORDER BY cantidad DESC LIMIT 5';
         return Database::getRows($sql);
     }
 
     public function porcentajeProductosCategoria()
     {
-        $sql = 'SELECT nombre, ROUND((COUNT(id_producto) * 100.0 / (SELECT COUNT(id_producto) FROM tb_productos)), 2) porcentaje
+        $sql = 'SELECT nombre_categoria, ROUND((COUNT(id_producto) * 100.0 / (SELECT COUNT(id_producto) FROM tb_productos)), 2) porcentaje
                 FROM tb_productos
                 INNER JOIN tb_categorias USING(id_categoria)
-                GROUP BY nombre ORDER BY porcentaje DESC';
+                GROUP BY nombre_categoria ORDER BY porcentaje DESC';
         return Database::getRows($sql);
     }
 
@@ -54,5 +56,4 @@ class GraficoHandler
             ORDER BY fecha ASC;';
         return Database::getRows($sql);
     }
-
 }
