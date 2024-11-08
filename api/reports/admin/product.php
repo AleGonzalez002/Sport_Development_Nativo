@@ -1,6 +1,6 @@
 <?php
 // Se incluye la clase con las plantillas para generar reportes.
-require_once ('../../helpers/report.php');
+require_once ('../../helpers/report_template.php');
 // Se incluyen las clases para la transferencia y acceso a datos.
 require_once ('../../models/data/product_data.php');
 require_once ('../../models/data/category_data.php');
