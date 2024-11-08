@@ -1,8 +1,8 @@
 <?php
 // Incluir archivos necesarios
 require_once ('../../helpers/comprobante.php');
-require_once ('../../models/data/pedido_data.php');
-require_once ('../../models/data/producto_data.php');
+require_once ('../../models/data/cart_data.php');
+require_once ('../../models/data/product_data.php');
 
 // Se instancia la clase para crear el reporte.
 $pdf = new Report;

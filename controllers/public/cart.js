@@ -147,7 +147,7 @@ async function finishOrder() {
 
 const openReport = async () => {
     // Se declara una constante tipo objeto con la ruta específica del reporte en el servidor.
-    const PATH = new URL(`${SERVER_URL}helpers/comprobante.php`);
+    const PATH = new URL(`${SERVER_URL}reports/public/receipt.php`);
 
     // Abre la URL en una nueva pestaña para descargar el archivo.
     window.open(PATH.href, '_blank');

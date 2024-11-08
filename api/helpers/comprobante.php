@@ -62,7 +62,7 @@ class Report extends FPDF
     public function header()
     {
         // Se establece el logo.
-        $this->image('../../images/logo_letra.png', 15, 8, 40);
+        $this->image(__DIR__ . '\..\..\resources\img\logo_letra.png', 15, 8, 40);
         // Se ubica el título.
         $this->cell(20);
         $this->setFont('Arial', 'B', 15);
@@ -74,7 +74,7 @@ class Report extends FPDF
         // Se agrega un salto de línea para mostrar el contenido principal del documento.
         $this->ln(10);
         // Se establece el logo.
-        $this->image('../../images/logo_azul.png', -50, 245, 200);
+        $this->image(__DIR__ . '\..\..\resources\img\logo_azul.png', -50, 245, 200);
     }
 
     /*
