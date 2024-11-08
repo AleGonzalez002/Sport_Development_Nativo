@@ -1,5 +1,5 @@
 // Constantes para completar las rutas de la API.
-const GENERO_API = 'services/admin/genders.php';
+const GENERO_API = 'services/admin/gender.php';
 // Constante para establecer el formulario de buscar.
 const SEARCH_FORM = document.getElementById('searchForm');
 // Constantes para establecer el contenido de la tabla.
