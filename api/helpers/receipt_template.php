@@ -1,4 +1,5 @@
 <?php
+
 // Se incluye la clase para generar archivos PDF.
 require_once('../../libraries/fpdf185/fpdf.php');
 // Se incluyen las clases para el manejo de datos de administradores.
@@ -8,6 +9,7 @@ require_once('../../models/data/client_data.php');
  *   Clase para definir las plantillas de los reportes del sitio privado.
  *   Para más información http://www.fpdf.org/
  */
+
 function getUser()
 {
     return isset($_SESSION['correoCliente']) ? $_SESSION['correoCliente'] : null;
@@ -24,6 +26,7 @@ class Report extends FPDF
      *   Parámetros: $title (título del reporte).
      *   Retorno: ninguno.
      */
+
     public function startReport($title)
     {
         // Se crea una sesión o se reanuda la actual para poder utilizar variables de sesión en los reportes.
@@ -50,6 +53,7 @@ class Report extends FPDF
      *   Parámetros: $string (cadena).
      *   Retorno: cadena convertida.
      */
+
     public function encodeString($string)
     {
         return mb_convert_encoding($string, 'ISO-8859-1', 'utf-8');
@@ -59,6 +63,7 @@ class Report extends FPDF
      *   Se sobrescribe el método de la librería para establecer la plantilla del encabezado de los reportes.
      *   Se llama automáticamente en el método addPage()
      */
+
     public function header()
     {
         // Se establece el logo.
@@ -81,6 +86,7 @@ class Report extends FPDF
      *   Se sobrescribe el método de la librería para establecer la plantilla del pie de los reportes.
      *   Se llama automáticamente en el método output()
      */
+
     public function footer()
     {
         // Se establece la posición para el número de página (a 15 milímetros del final).
