@@ -1,6 +1,7 @@
 /*
 *   CONTROLADOR DE USO GENERAL EN TODAS LAS PÁGINAS WEB.
 */
+
 // Constante para establecer la ruta base del servidor.
 const SERVER_URL = 'http://localhost/Sport_Development_3/api/';
 

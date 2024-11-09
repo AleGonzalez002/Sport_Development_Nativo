@@ -1,7 +1,7 @@
 <?php
 
 // Se incluye la clase del modelo.
-require_once ('../../models/data/cart_data.php');
+require_once('../../models/data/cart_data.php');
 
 // Se comprueba si existe una acción a realizar, de lo contrario se finaliza el script con un mensaje de error.
 if (isset($_GET['action'])) {
@@ -16,7 +16,7 @@ if (isset($_GET['action'])) {
         $result['session'] = 1;
         // Se compara la acción a realizar cuando un cliente ha iniciado sesión.
         switch ($_GET['action']) {
-            // Acción para agregar un producto al carrito de compras.
+                // Acción para agregar un producto al carrito de compras.
             case 'createDetail':
                 // Validar y sanitizar datos del formulario
                 $_POST = Validator::validateForm($_POST);
@@ -48,7 +48,7 @@ if (isset($_GET['action'])) {
                 }
                 break;
 
-            // Acción para crear una tarjeta.
+                // Acción para crear una tarjeta.
             case 'createTarget':
                 $_POST = Validator::validateForm($_POST);
                 if (
@@ -68,7 +68,7 @@ if (isset($_GET['action'])) {
                     $result['message'] = 'Tarjeta agregada correctamente';
                 }
                 break;
-            // Acción para obtener los números de las tarjetas.
+                // Acción para obtener los números de las tarjetas.
             case 'getCardNumbers':
                 $result['dataset'] = $pedido->getCardNumbers($_SESSION['idCliente']);
                 if ($result['dataset']) {
@@ -77,7 +77,7 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'Ocurrió un problema al obtener los números de las tarjetas';
                 }
                 break;
-            // Acción para obtener los productos agregados en el carrito de compras.
+                // Acción para obtener los productos agregados en el carrito de compras.
             case 'readDetail':
                 if (!$pedido->getOrder()) {
                     $result['error'] = 'No ha agregado productos al carrito';
@@ -87,7 +87,7 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'No existen productos en el carrito';
                 }
                 break;
-            // Acción para actualizar la cantidad de un producto en el carrito de compras.
+                // Acción para actualizar la cantidad de un producto en el carrito de compras.
             case 'updateDetail':
                 $_POST = Validator::validateForm($_POST);
 
@@ -136,7 +136,7 @@ if (isset($_GET['action'])) {
                     }
                 }
                 break;
-            // Acción para remover un producto del carrito de compras.
+                // Acción para remover un producto del carrito de compras.
             case 'deleteDetail':
                 if (!$pedido->setIdDetalle($_POST['idDetalle'])) {
                     $result['error'] = $pedido->getDataError();
@@ -148,7 +148,7 @@ if (isset($_GET['action'])) {
                 }
                 break;
 
-            // Acción para finalizar el carrito de compras.
+                // Acción para finalizar el carrito de compras.
             case 'finishOrder':
                 if ($pedido->finishOrder()) {
                     $result['status'] = 1;
@@ -157,7 +157,7 @@ if (isset($_GET['action'])) {
                     $result['error'] = 'Ocurrió un problema al iniciar el pedido';
                 }
                 break;
-            // Acción para eliminar el carrito de compras.
+                // Acción para eliminar el carrito de compras.
             case 'deleteOrder':
                 if ($pedido->deleteOrder()) {
                     $result['status'] = 1;
@@ -185,7 +185,7 @@ if (isset($_GET['action'])) {
     // Se indica el tipo de contenido a mostrar y su respectivo conjunto de caracteres.
     header('Content-type: application/json; charset=utf-8');
     // Se imprime el resultado en formato JSON y se retorna al controlador.
-    print (json_encode($result));
+    print(json_encode($result));
 } else {
-    print (json_encode('Recurso no disponible'));
+    print(json_encode('Recurso no disponible'));
 }

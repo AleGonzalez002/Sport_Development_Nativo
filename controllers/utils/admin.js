@@ -5,13 +5,16 @@
 
 // Constante para completar la ruta de la API.
 const USER_API = 'services/admin/administrator.php';
+
 // Constante para establecer el elemento del contenido principal.
 const MAIN = document.querySelector('main');
 MAIN.style.paddingTop = '75px';
 MAIN.style.paddingBottom = '100px';
 MAIN.classList.add('container');
+
 // Se establece el título de la página web.
 document.querySelector('title').textContent = 'Sport Development - Private';
+
 // Constante para establecer el elemento del título principal.
 const MAIN_TITLE = document.getElementById('mainTitle');
 MAIN_TITLE.classList.add('text-center', 'py-3');
@@ -20,6 +23,7 @@ MAIN_TITLE.classList.add('text-center', 'py-3');
 *   Parámetros: ninguno.
 *   Retorno: ninguno.
 */
+
 const loadTemplate = async () => {
     // Petición para obtener en nombre del usuario que ha iniciado sesión.
     const DATA = await fetchData(USER_API, 'getUser');

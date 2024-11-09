@@ -1,34 +1,40 @@
 /*
-*   Controlador es de uso general en las páginas web del sitio público.
-*   Sirve para manejar las plantillas del encabezado y pie del documento.
-*/
+ *   Controlador es de uso general en las páginas web del sitio público.
+ *   Sirve para manejar las plantillas del encabezado y pie del documento.
+ */
 
 // Constante para completar la ruta de la API.
-const USER_API = 'services/public/client.php';
+const USER_API = "services/public/client.php";
+
 // Constante para establecer el elemento del contenido principal.
-const MAIN = document.querySelector('main');
-MAIN.style.paddingTop = '75px';
-MAIN.style.paddingBottom = '100px';
-MAIN.classList.add('container');
+const MAIN = document.querySelector("main");
+MAIN.style.paddingTop = "75px";
+MAIN.style.paddingBottom = "100px";
+MAIN.classList.add("container");
+
 // Se establece el título de la página web.
-document.querySelector('title').textContent = 'Sport Development - Store';
+document.querySelector("title").textContent = "Sport Development - Store";
 // Constante para establecer el elemento del título principal.
-const MAIN_TITLE = document.getElementById('mainTitle');
-MAIN_TITLE.classList.add('text-center', 'py-3');
+
+const MAIN_TITLE = document.getElementById("mainTitle");
+MAIN_TITLE.classList.add("text-center", "py-3");
 
 /*  Función asíncrona para cargar el encabezado y pie del documento.
-*   Parámetros: ninguno.
-*   Retorno: ninguno.
-*/
+ *   Parámetros: ninguno.
+ *   Retorno: ninguno.
+ */
+
 const loadTemplate = async () => {
-    // Petición para obtener en nombre del usuario que ha iniciado sesión.
-    const DATA = await fetchData(USER_API, 'getUser');
-    // Se comprueba si el usuario está autenticado para establecer el encabezado respectivo.
-    if (DATA.session) {
-        // Se verifica si la página web no es el inicio de sesión, de lo contrario se direcciona a la página web principal.
-        if (!location.pathname.endsWith('login.html')) {
-            // Se agrega el encabezado de la página web antes del contenido principal.
-            MAIN.insertAdjacentHTML('beforebegin', `
+  // Petición para obtener en nombre del usuario que ha iniciado sesión.
+  const DATA = await fetchData(USER_API, "getUser");
+  // Se comprueba si el usuario está autenticado para establecer el encabezado respectivo.
+  if (DATA.session) {
+    // Se verifica si la página web no es el inicio de sesión, de lo contrario se direcciona a la página web principal.
+    if (!location.pathname.endsWith("login.html")) {
+      // Se agrega el encabezado de la página web antes del contenido principal.
+      MAIN.insertAdjacentHTML(
+        "beforebegin",
+        `
                 <header>
                     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #245C9D;">
                         <div class="container">
@@ -68,13 +74,16 @@ const loadTemplate = async () => {
                         </div>
                     </nav>
                 </header>
-            `);
-        } else {
-            location.href = 'index.html';
-        }
+            `
+      );
     } else {
-        // Se agrega el encabezado de la página web antes del contenido principal.
-        MAIN.insertAdjacentHTML('beforebegin', `
+      location.href = "index.html";
+    }
+  } else {
+    // Se agrega el encabezado de la página web antes del contenido principal.
+    MAIN.insertAdjacentHTML(
+      "beforebegin",
+      `
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #245C9D;">
                 <div class="container">
@@ -101,10 +110,13 @@ const loadTemplate = async () => {
                 </div>
             </nav>
         </header>
-        `);
-    }
-    // Se agrega el pie de la página web después del contenido principal.
-    MAIN.insertAdjacentHTML('afterend', `
+        `
+    );
+  }
+  // Se agrega el pie de la página web después del contenido principal.
+  MAIN.insertAdjacentHTML(
+    "afterend",
+    `
    <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
@@ -122,5 +134,6 @@ const loadTemplate = async () => {
             </div>
         </div>
     </footer>
-    `);
-}
+    `
+  );
+};
