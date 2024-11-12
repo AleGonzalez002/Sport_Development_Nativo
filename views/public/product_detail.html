@@ -22,26 +22,27 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h3 id="nombreProducto" class="card-title mb-3"></h3>
-                        <p id="descripcionProducto" class="card-text mb-3"></p>
-
+                        <h3 id="nombreProducto" class="card-title mb-4 fs-5"></h3>
+                        <h3 id="descripcionProducto" class="card-text mb-3 fs-6"></h3>
                         <!-- Calificación -->
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <h3 class="mb-3 fs-6">Calificación:<span id="averageRatingStars"  class="mx-2"></span><span
+                                        id="averageRatingValue" class="fs-6"></span></h3>
+                            </div>
+                        </div>
+
+
+                        <!-- Existencias -->
                         <div class="col my-2">
-                            <span class="me-2">Calificación:</span>
-                            <div id="averageRatingStars" class="d-inline"></div>
-                            <span id="averageRatingValue" class="ms-2"></span>
+                            <p class="card-text mb-2 badge bg-light text-dark fs-6"><strong>Existencias:</strong> <span
+                                    id="existenciasProducto"></span></p>
                         </div>
                         <!-- Precio -->
                         <div class="col my-2">
                             <p class="card-text mb-2 badge bg-success text-light fs-6"><strong>Precio:</strong> $<span
                                     id="precioProducto"></span></p>
                         </div>
-                        <!-- Existencias -->
-                        <div class="col my-2">
-                            <p class="card-text mb-2 badge bg-light text-dark fs-6"><strong>Existencias:</strong> <span
-                                    id="existenciasProducto"></span></p>
-                        </div>
-
 
                         <!-- Formulario de compra -->
                         <form id="shoppingForm">
@@ -49,10 +50,10 @@
                             <div class="mb-3">
                                 <label for="cantidadProducto" class="form-label">Cantidad</label>
                                 <input type="number" id="cantidadProducto" name="cantidadProducto" min="1"
-                                    class="form-control" required>
+                                    class="form-control w-auto" required>
                             </div>
-                            <div class="d-flex justify-content-end">
-                                <button type="submit" class="btn btn-dark">
+                            <div class="col-12 d-flex justify-content-end">
+                                <button type="submit"  class="btn btn-dark py-3 btn-lg">
                                     <i class="bi bi-cart-plus-fill"></i> Comprar
                                 </button>
                             </div>
