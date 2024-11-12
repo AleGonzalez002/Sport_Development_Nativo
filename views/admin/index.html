@@ -20,62 +20,69 @@
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
     <main style="flex: 1;">
         <!-- Título del contenido principal -->
-        <h3 id="mainTitle"></h3>
-        <img src="../../resources/img/user.png" class="mx-auto d-block" width="200">
+        <h3 id="mainTitle" class="text-center mt-4"></h3>
+        <!-- Imagen de usuario centrada -->
+        <img src="../../resources/img/user.png" class="mx-auto d-block" width="100">
         <!-- Formulario para iniciar sesión -->
-        <form class="d-none" id="loginForm">
-            <div class="row g-3">
-                <div class="col-sm-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+        <form class="card mx-auto mt-4 d-none" style="max-width: 500px;" id="loginForm">
+            <div class="card-body">
+                <div class="mb-3">
                     <label for="alias" class="form-label">Alias</label>
-                    <input id="alias" type="text" name="alias" class="form-control" required>
+                    <input id="alias" type="text" name="alias" class="form-control" placeholder="Ingresa tu alias"
+                        required>
                 </div>
-                <div class="col-sm-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+                <div class="mb-3">
                     <label for="clave" class="form-label">Contraseña</label>
-                    <input id="clave" type="password" name="clave" class="form-control" required>
+                    <input id="clave" type="password" name="clave" class="form-control"
+                        placeholder="Ingresa tu contraseña" required>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-dark p-3"><i class="bi bi-send"></i> Enviar</button>
+                    <button type="submit" class="btn btn-dark w-100 p-3"><i class="bi bi-send"></i> Enviar</button>
                 </div>
             </div>
         </form>
         <!-- Formulario para crear el primer administrador -->
-        <form class="d-none" id="signupForm">
-            <div class="row g-3">
-                <div class="col-sm-12 col-md-6">
+        <form class="card mx-auto mt-4 d-none" style="max-width: 500px;" id="signupForm">
+            <div class="card-body">
+                <div class="mb-3">
                     <label for="nombreAdministrador" class="form-label">Nombre</label>
                     <input id="nombreAdministrador" type="text" name="nombreAdministrador" class="form-control"
-                        required>
+                        placeholder="Ingresa tu nombre" required>
                 </div>
-                <div class="col-sm-12 col-md-6">
+                <div class="mb-3">
                     <label for="apellidoAdministrador" class="form-label">Apellido</label>
                     <input id="apellidoAdministrador" type="text" name="apellidoAdministrador" class="form-control"
-                        required>
+                        placeholder="Ingresa tu apellido" required>
                 </div>
-                <div class="col-sm-12 col-md-6">
+                <div class="mb-3">
                     <label for="correoAdministrador" class="form-label">Correo</label>
                     <input id="correoAdministrador" type="email" name="correoAdministrador" class="form-control"
-                        required>
+                        placeholder="Ingresa tu correo" required>
                 </div>
-                <div class="col-sm-12 col-md-6">
+                <div class="mb-3">
                     <label for="aliasAdministrador" class="form-label">Alias</label>
-                    <input id="aliasAdministrador" type="text" name="aliasAdministrador" class="form-control" required>
+                    <input id="aliasAdministrador" type="text" name="aliasAdministrador" class="form-control"
+                        placeholder="Ingresa un alias" required>
                 </div>
-                <div class="col-sm-12 col-md-6">
+                <div class="mb-3">
                     <label for="claveAdministrador" class="form-label">Contraseña</label>
                     <input id="claveAdministrador" type="password" name="claveAdministrador" class="form-control"
-                        required>
+                        placeholder="Ingresa tu contraseña" required>
                 </div>
-                <div class="col-sm-12 col-md-6">
+                <div class="mb-3">
                     <label for="confirmarClave" class="form-label">Confirmar contraseña</label>
-                    <input id="confirmarClave" type="password" name="confirmarClave" class="form-control" required>
+                    <input id="confirmarClave" type="password" name="confirmarClave" class="form-control"
+                        placeholder="Confirma tu contraseña" required>
                 </div>
-                <div class="text-center py-5">
-                    <button type="reset" class="btn btn-dark p-3"><i class="bi bi-x-square btn-lg"></i>
+                <div class="d-flex justify-content-between">
+                    <button type="reset" class="btn btn-outline-secondary px-4 py-2"><i class="bi bi-x-circle"></i>
                         Cancelar</button>
-                    <button type="submit" class="btn btn-primary p-3"><i class="bi bi-save btn-lg"></i> Guardar</button>
+                    <button type="submit" class="btn btn-primary px-4 py-2"><i class="bi bi-save"></i>
+                        Guardar</button>
                 </div>
             </div>
         </form>
+
     </main>
     <!-- IMPORTACIÓN DE ARCHIVOS JAVASCRIPT -->
     <!-- Llamada al framework y librería de mensajes -->
