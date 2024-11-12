@@ -69,6 +69,9 @@ SEARCH_FORM.addEventListener('submit', async (event) => {
 
     // Se comprueba si la respuesta es satisfactoria.
     if (DATA.status) {
+        // Se asigna como título principal el resultado de la búsqueda.
+        MAIN_TITLE.textContent = `Resultados de la búsqueda`;
+        
         // Se inicializa el contenedor de productos.
         PRODUCTOS.innerHTML = '';
 

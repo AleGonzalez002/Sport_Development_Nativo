@@ -41,21 +41,14 @@ class ProductoHandler
 
     public function searchCards()
     {
-        // Obtener el valor de búsqueda (lo que se ingresa en el formulario de búsqueda).
+        // Obtener el valor de búsqueda de la entrada del usuario y formatearlo para búsqueda LIKE
         $value = '%' . Validator::getSearchValue() . '%';
-
-        // El id_categoria debe ser pasado desde el controlador (por ejemplo, desde la URL o el formulario).
-        // Usamos $this->categoria para filtrar por la categoría seleccionada.
-        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, nombre_categoria, estado_producto, existencias_producto
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto
             FROM tb_productos
             INNER JOIN tb_categorias USING(id_categoria)
-            WHERE id_categoria = ? AND (nombre_producto LIKE ? OR descripcion_producto LIKE ?)
+            WHERE id_categoria = ? AND estado_producto = true
             ORDER BY nombre_producto';
-
-        // El primer parámetro es la categoría, el segundo y tercero son los valores para buscar en nombre y descripción.
-        $params = array($this->categoria, $value, $value);
-
-        // Ejecutamos la consulta y devolvemos los resultados.
+        $params = array($this->categoria,  $value);
         return Database::getRows($sql, $params);
     }
 
