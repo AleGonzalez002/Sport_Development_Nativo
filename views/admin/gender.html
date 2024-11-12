@@ -21,26 +21,26 @@
     <main style="flex: 1;">
         <!-- Título del contenido principal -->
         <h3 id="mainTitle"></h3>
-        <div class="row">
+        <div class="row justify-content-center my-5">
             <!-- Formulario de búsqueda -->
-            <form class="col-sm-12 col-md-6" id="searchForm">
-                <div class="row">
-                    <div class="col-6">
-                        <input type="search" class="form-control" name="search" placeholder="Buscar" required>
+            <form class="col-12 col-md-8" id="searchForm">
+                <div class="d-flex justify-content-between align-items-center">
+                    <!-- Campo de búsqueda -->
+                    <div class="input-group flex-grow-1 me-2">
+                        <input type="search" class="form-control border-2 border-secondary" name="search" placeholder="Buscar..." required>
                     </div>
-                    <div class="col-6">
-                        <button type="submit" class="btn btn-dark">
+                    <!-- Botones -->
+                    <div class="d-flex">
+                        <button type="submit" class="btn btn-outline-success mx-1" aria-label="Buscar">
                             <i class="bi bi-search"></i>
                         </button>
-                        <button type="reset" class="btn btn-dark" onclick="fillTable()">
+                        <button type="reset" class="btn btn-outline-secondary mx-1" aria-label="Limpiar" onclick="fillTable()">
                             <i class="bi bi-x-square-fill"></i>
                         </button>
-                        <!-- Botón para abrir una caja de diálogo al momento de crear un nuevo registro -->
-                        <button type="button" class="btn btn-dark" onclick="openCreate()">
+                        <button type="button" class="btn btn-outline-primary mx-1" aria-label="Nuevo registro" onclick="openCreate()">
                             <i class="bi bi-plus-square-fill"></i>
                         </button>
-                        <!-- Botón para abrir un reporte en formato PDF -->
-                        <button type="button" class="btn btn-dark" onclick="openReport()">
+                        <button type="button" class="btn btn-outline-dark mx-1" aria-label="Generar reporte" onclick="openReport()">
                             <i class="bi bi-filetype-pdf"></i>
                         </button>
                     </div>
@@ -49,13 +49,12 @@
         </div>
 
         <!-- Tabla para mostrar los registros existentes -->
-        <table class="table table-hover">
-            <!-- Encabezado de la tabla -->
-            <thead>
-                <tr>
-                    <!-- Cantidad de registros encontrados -->
-                    <td colspan="28" id="rowsFound"></td>
-                </tr>
+        <table class="table table-borderless">
+            <tr>
+                <!-- Cantidad de registros encontrados -->
+                <td colspan="28" id="rowsFound"></td>
+            </tr>
+            <thead class="table-light">
                 <!-- Títulos de las columnas -->
                 <tr>
                     <th>Nombre del genero</th>
