@@ -27,11 +27,6 @@ CREATE TABLE tb_clientes (
   fecha_expiracion_codigo DATETIME NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE tb_tallas (
-   id_talla INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-   nombre_talla VARCHAR(5) NOT NULL
-)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 CREATE TABLE tb_categorias (
   id_categoria INT(10) AUTO_INCREMENT PRIMARY KEY NOT NULL,
   nombre_categoria VARCHAR(50) NOT NULL,
@@ -63,14 +58,6 @@ CREATE TABLE tb_comentarios (
   estado_comentario  TINYINT(1) NOT NULL
 );
 
-CREATE TABLE tb_detalle_pedidos (
-  id_detalle INT(10) AUTO_INCREMENT PRIMARY KEY NOT NULL,
-  id_producto INT(10) UNSIGNED NOT NULL,
-  cantidad_producto SMALLINT(6) UNSIGNED NOT NULL,
-  precio_producto DECIMAL(5,2) UNSIGNED NOT NULL,
-  id_pedido INT(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 CREATE TABLE tb_pedidos (
   id_pedido INT(10) AUTO_INCREMENT PRIMARY KEY NOT NULL,
   id_cliente INT(10) UNSIGNED NOT NULL,
@@ -78,6 +65,19 @@ CREATE TABLE tb_pedidos (
   estado_pedido ENUM('Pendiente','EnCamino','Entregado','Cancelado','Historial') NOT NULL,
   fecha_registro DATE NOT NULL DEFAULT CURRENT_TIMESTAMP()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE tb_detalle_pedidos (
+  id_detalle INT(10) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  id_producto INT(10) UNSIGNED NOT NULL,
+  id_pedido INT(10) UNSIGNED NOT NULL,
+  cantidad_producto SMALLINT(6) UNSIGNED NOT NULL,
+  precio_producto DECIMAL(5,2) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE tb_tallas (
+   id_talla INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+   nombre_talla VARCHAR(5) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE tb_colores (
  id_color INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -125,7 +125,7 @@ INSERT INTO tb_categorias (id_categoria, nombre_categoria, imagen_categoria, des
 
 INSERT INTO tb_productos (id_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, imagen_producto, id_categoria, estado_producto, id_administrador, fecha_registro) 
 VALUES 
-(1, 'Balon de Futbol', 'Balon oficial para partidos de futbol.', 29.99, 150, 'img5.png', 1, 1, 1, '2024-05-30'),
+(1, 'Taco de Futbol', 'Balon oficial para partidos de futbol.', 29.99, 150, 'img5.png', 1, 1, 1, '2024-05-30'),
 (2, 'Balon de Futbol', 'Balon oficial para partidos de futbol.', 29.99, 150, 'img5.png', 1, 1, 1, '2024-05-30'),
 (3, 'Balon de Futbol', 'Balon oficial para partidos de futbol.', 29.99, 150, 'img5.png', 1, 1, 1, '2024-05-30'),
 (4, 'Balon de Futbol', 'Balon oficial para partidos de futbol.', 29.99, 150, 'img5.png', 1, 1, 1, '2024-05-30'),

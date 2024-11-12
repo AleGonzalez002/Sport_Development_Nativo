@@ -1,7 +1,7 @@
 <?php
 
 // Se incluye la clase para trabajar con la base de datos.
-require_once ('../../helpers/database.php');
+require_once('../../helpers/database.php');
 
 /*
  *	Clase para manejar el comportamiento de los datos de la tabla PRODUCTO.
@@ -30,7 +30,39 @@ class ProductoHandler
     public function searchRows()
     {
         $value = '%' . Validator::getSearchValue() . '%';
-        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, nombre, estado_producto
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, nombre_categoria, estado_producto
+                FROM tb_productos
+                INNER JOIN tb_categorias USING(id_categoria)
+                WHERE nombre_producto LIKE ? OR descripcion_producto LIKE ?
+                ORDER BY nombre_producto';
+        $params = array($value, $value);
+        return Database::getRows($sql, $params);
+    }
+
+    public function searchCards()
+    {
+        // Obtener el valor de búsqueda (lo que se ingresa en el formulario de búsqueda).
+        $value = '%' . Validator::getSearchValue() . '%';
+
+        // El id_categoria debe ser pasado desde el controlador (por ejemplo, desde la URL o el formulario).
+        // Usamos $this->categoria para filtrar por la categoría seleccionada.
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, nombre_categoria, estado_producto, existencias_producto
+            FROM tb_productos
+            INNER JOIN tb_categorias USING(id_categoria)
+            WHERE id_categoria = ? AND (nombre_producto LIKE ? OR descripcion_producto LIKE ?)
+            ORDER BY nombre_producto';
+
+        // El primer parámetro es la categoría, el segundo y tercero son los valores para buscar en nombre y descripción.
+        $params = array($this->categoria, $value, $value);
+
+        // Ejecutamos la consulta y devolvemos los resultados.
+        return Database::getRows($sql, $params);
+    }
+
+    public function searchAll()
+    {
+        $value = '%' . Validator::getSearchValue() . '%';
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, nombre_categoria, estado_producto, existencias_producto
                 FROM tb_productos
                 INNER JOIN tb_categorias USING(id_categoria)
                 WHERE nombre_producto LIKE ? OR descripcion_producto LIKE ?
@@ -182,5 +214,4 @@ class ProductoHandler
         $params = array($calificacionPromedio, $this->id);
         return Database::executeRow($sql, $params);
     }
-
 }
