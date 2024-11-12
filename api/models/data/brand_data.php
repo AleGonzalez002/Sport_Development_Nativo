@@ -30,7 +30,7 @@ class MarcaData extends MarcaHandler
     public function setNombre($value, $min = 2, $max = 50)
     {
         // Verificar si la marca ya existe en la base de datos
-        $checkSql = 'SELECT * FROM tb_marcas WHERE nombre = ?';
+        $checkSql = 'SELECT * FROM tb_marcas WHERE nombre_marca = ?';
         $checkParams = array($value);
 
         if (Database::getRow($checkSql, $checkParams)) {

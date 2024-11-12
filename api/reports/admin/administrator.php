@@ -31,9 +31,9 @@ if ($dataAdministradores = $adminData->readAll()) {
 
     foreach ($dataAdministradores as $admin) {
         $pdf->setTextColor(0, 0, 0);
-        $pdf->cell(10, 10, $admin['id_admin'], 1, 0, 'C');
-        $pdf->cell(50, 10, $pdf->encodeString($admin['nombre']), 1, 0, 'C');
-        $pdf->cell(50, 10, $pdf->encodeString($admin['apellido']), 1, 0, 'C');
+        $pdf->cell(10, 10, $admin['id_administrador'], 1, 0, 'C');
+        $pdf->cell(50, 10, $pdf->encodeString($admin['nombre_administrador']), 1, 0, 'C');
+        $pdf->cell(50, 10, $pdf->encodeString($admin['apellido_administrador']), 1, 0, 'C');
         $pdf->cell(80, 10, $pdf->encodeString($admin['correo_administrador']), 1, 0, 'C');
     }
 } else {

@@ -34,7 +34,7 @@ if ($dataGenero = $generomodel->readAll()) {
         $pdf->cell(50, 10, $genero['id_genero'], 1, 0, 'C');
 
         // Nombre
-        $pdf->cell(140, 10, $pdf->encodeString($genero['nombre']), 1, 1, 'C'); // Cambiado a 140 y con salto de línea
+        $pdf->cell(140, 10, $pdf->encodeString($genero['nombre_genero']), 1, 1, 'C'); // Cambiado a 140 y con salto de línea
     }
 } else {
     // Si no hay generos registrados

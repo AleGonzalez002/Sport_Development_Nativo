@@ -35,7 +35,7 @@ if ($dataCategorias = $categoria->readAll()) {
     foreach ($dataCategorias as $rowCategoria) {
         $pdf->setTextColor(255, 255, 255);
         // Se imprime una celda con el nombre de la categoría.
-        $pdf->cell(0, 10, $pdf->encodeString('Categoría: ' . $rowCategoria['nombre']), 1, 1, 'C', 1);
+        $pdf->cell(0, 10, $pdf->encodeString('Categoría: ' . $rowCategoria['nombre_categoria']), 1, 1, 'C', 1);
         // Se instancia el módelo Producto para procesar los datos.
         $producto = new ProductoData;
         // Se establece la categoría para obtener sus productos, de lo contrario se imprime un mensaje de error.
