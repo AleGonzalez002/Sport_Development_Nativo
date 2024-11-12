@@ -16,4 +16,8 @@
 
 ### -`Arreglar Movil`🔧
 
+### -`Agregar foto de perfil`🔧
+
+### -`Generar mas reportes`🔧
+
 
