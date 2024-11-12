@@ -95,6 +95,10 @@ const fillTable = async (form = null) => {
                         <button type="button" class="btn btn-outline-danger btn-sm mx-1" title="Eliminar" onclick="openDelete(${row.id_administrador})">
                             <i class="bi bi-trash-fill"></i>
                         </button>
+                         </button>
+                           <button type="button" class="btn btn-outline-dark btn-sm mx-1" title="Eliminar" onclick="openReport(${row.id_categoria})">
+                            <i class="bi bi-filetype-pdf"></i>
+                        </button>
                     </div>
                 </td>
             </tr>
