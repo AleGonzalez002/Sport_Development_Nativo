@@ -31,7 +31,7 @@ class DeporteData extends DeporteHandler
     public function setNombre($value, $min = 2, $max = 50)
     {
         // Verificar si el color ya existe en la base de datos
-        $checkSql = 'SELECT * FROM tb_deportes WHERE nombre = ?';
+        $checkSql = 'SELECT * FROM tb_deportes WHERE nombre_deporte = ?';
         $checkParams = array($value);
 
         if (Database::getRow($checkSql, $checkParams)) {

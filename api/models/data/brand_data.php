@@ -34,7 +34,7 @@ class MarcaData extends MarcaHandler
         $checkParams = array($value);
 
         if (Database::getRow($checkSql, $checkParams)) {
-            $this->data_error = 'El marca ya existe';
+            $this->data_error = 'La marca ya existe';
             return false;
         }
 

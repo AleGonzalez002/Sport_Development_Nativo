@@ -59,6 +59,9 @@ const loadTemplate = async () => {
                                         <a class="nav-link text-white" href="brand.html">Marcas</a>
                                     </li>
                                     <li class="nav-item">
+                                        <a class="nav-link text-white" href="sport.html">Deportes</a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="nav-link text-white" href="product.html">Productos</a>
                                     </li>
                                     <li class="nav-item">

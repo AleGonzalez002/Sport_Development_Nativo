@@ -141,6 +141,7 @@ const openUpdate = async (ID_DEPORTE) => {
         sweetAlert(2, DATA.error, false);
     }
 }
+
 /*
 *   Función asíncrona para eliminar un registro.
 *   Parámetros: id (identificador del registro seleccionado).
@@ -167,4 +168,16 @@ const openDelete = async (ID_DEPORTE) => {
             sweetAlert(2, DATA.error, false);
         }
     }
+}
+
+/*
+*   Función para abrir un reporte automático de productos por categoría.
+*   Parámetros: ninguno.
+*   Retorno: ninguno.
+*/
+const openReport = () => {
+    // Se declara una constante tipo objeto con la ruta específica del reporte en el servidor.
+    const PATH = new URL(`${SERVER_URL}reports/admin/sport.php`);
+    // Se abre el reporte en una nueva pestaña.
+    window.open(PATH.href);
 }
