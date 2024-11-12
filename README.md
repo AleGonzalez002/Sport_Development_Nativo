@@ -1,6 +1,6 @@
 ## Recomendaciones:
 
-### -`Hacer buscador funcional`🔧
+### -`Hacer Filtros para productos`🔧
 
 ### -`Unificar metodo de recuperacion con el de movil`🔧
 
