@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Llamada a la función para mostrar el encabezado y pie del documento.
     loadTemplate();
     // Se establece el título del contenido principal.
-    MAIN_TITLE.textContent = 'Detalles del producto';
+    MAIN_TITLE.textContent = '';
 
     // Constante tipo objeto con los datos del producto seleccionado.
     const FORM = new FormData();

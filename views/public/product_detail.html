@@ -15,37 +15,45 @@
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
     <main style="flex: 1;">
         <h4 id="mainTitle"></h4>
-        <div class="card mb-3" id="detalle">
+        <div class="card mb-4 shadow-sm">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img id="imagenProducto" class="img-fluid rounded-start" alt="Imagen del producto">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title" id="nombreProducto"></h5>
-                        <p class="card-text" id="descripcionProducto"></p>
-                        <div id="averageRatingContainer" class="py-3">
-                            <p class="d-inline">Calificación:</p>
+                        <h3 id="nombreProducto" class="card-title mb-3"></h3>
+                        <p id="descripcionProducto" class="card-text mb-3"></p>
+
+                        <!-- Calificación -->
+                        <div class="col my-2">
+                            <span class="me-2">Calificación:</span>
                             <div id="averageRatingStars" class="d-inline"></div>
                             <span id="averageRatingValue" class="ms-2"></span>
                         </div>
-                        <p class="card-text">Precio: $<b class="text-success" id="precioProducto"></b></p>
-                        <p class="card-text">Existencias: <b id="existenciasProducto"></b></p>
+                        <!-- Precio -->
+                        <div class="col my-2">
+                            <p class="card-text mb-2 badge bg-success text-light fs-6"><strong>Precio:</strong> $<span
+                                    id="precioProducto"></span></p>
+                        </div>
+                        <!-- Existencias -->
+                        <div class="col my-2">
+                            <p class="card-text mb-2 badge bg-light text-dark fs-6"><strong>Existencias:</strong> <span
+                                    id="existenciasProducto"></span></p>
+                        </div>
 
-                        <form class="row gx-3 gy-2 mx-auto" id="shoppingForm">
 
-                            <input type="number" class="d-none" id="idProducto" name="idProducto">
-
-                            <div class="col-12 mb-2">
+                        <!-- Formulario de compra -->
+                        <form id="shoppingForm">
+                            <input type="hidden" id="idProducto" name="idProducto">
+                            <div class="mb-3">
                                 <label for="cantidadProducto" class="form-label">Cantidad</label>
                                 <input type="number" id="cantidadProducto" name="cantidadProducto" min="1"
-                                    class="form-control" placeholder="Ingrese cantidad" required>
+                                    class="form-control" required>
                             </div>
-
-                            <div class="col-12 d-flex justify-content-end py-5">
-                                <button type="submit" class="btn btn-dark py-3 btn-lg">
-                                    <i class="bi bi-cart-plus-fill"></i> Comprar <i
-                                        class="bi bi-arrow-return-right"></i>
+                            <div class="d-flex justify-content-end">
+                                <button type="submit" class="btn btn-dark">
+                                    <i class="bi bi-cart-plus-fill"></i> Comprar
                                 </button>
                             </div>
                         </form>
@@ -53,6 +61,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Formulario para agregar comentarios -->
         <div id="addCommentSection">
             <h5>Agregar Comentario</h5>
