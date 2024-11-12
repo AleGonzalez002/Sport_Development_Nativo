@@ -77,15 +77,18 @@ const fillTable = async (form = null) => {
             TABLE_BODY.innerHTML += `
                 <tr>
                     <td>${row.nombre_marca}</td>
-                    <td>
-                <button type="button" class="btn btn-success me-2 mb-2 mb-sm-2" onclick="openUpdate(${row.id_marca})">
+                     <td class="text-center">
+                    <div class="d-flex align-items-center">
+                        <!-- Botón de editar -->
+                        <button type="button" class="btn btn-outline-success btn-sm mx-1" title="Editar" onclick="openUpdate(${row.id_marca})">
                             <i class="bi bi-pencil-fill"></i>
                         </button>
-                        <div class="py-1"></div>
-                <button type="button" class="btn btn-danger me-2 mb-2 mb-sm-2" onclick="openDelete(${row.id_marca})">
-                    <i class="bi bi-trash-fill"></i>
-                </button>                
-                    </td>
+                        <!-- Botón de eliminar -->
+                        <button type="button" class="btn btn-outline-danger btn-sm mx-1" title="Eliminar" onclick="openDelete(${row.id_marca})">
+                            <i class="bi bi-trash-fill"></i>
+                        </button>
+                    </div>
+                </td>
                 </tr>
             `;
         });

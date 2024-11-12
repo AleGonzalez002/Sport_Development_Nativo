@@ -49,7 +49,7 @@ class ProductoHandler
 
     public function readAll()
     {
-        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, nombre_producto, estado_producto
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, nombre_categoria, estado_producto
                 FROM tb_productos
                 INNER JOIN tb_categorias USING(id_categoria)
                 ORDER BY nombre_producto';

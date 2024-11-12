@@ -80,21 +80,24 @@ const fillTable = async (form = null) => {
         DATA.dataset.forEach(row => {
             // Se crean y concatenan las filas de la tabla con los datos de cada registro.
             TABLE_BODY.innerHTML += `
-                <tr>
-                    <td>${row.apellido_administrador}</td>
-                    <td>${row.nombre_administrador}</td>
-                    <td>${row.correo_administrador}</td>
-                    <td>${row.alias_administrador}</td>
-                    <td>
-                        <button type="button" class="btn btn-success" onclick="openUpdate(${row.id_administrador})">
+              <tr>
+                <td>${row.apellido_administrador}</td>
+                <td>${row.nombre_administrador}</td>
+                <td>${row.correo_administrador}</td>
+                <td>${row.alias_administrador}</td>
+                <td class="text-center">
+                    <div class="d-flex align-items-center">
+                        <!-- Botón de editar -->
+                        <button type="button" class="btn btn-outline-success btn-sm mx-1" title="Editar" onclick="openUpdate(${row.id_administrador})">
                             <i class="bi bi-pencil-fill"></i>
                         </button>
-                        <div class="py-1"></div>
-                        <button type="button" class="btn btn-danger" onclick="openDelete(${row.id_administrador})">
+                        <!-- Botón de eliminar -->
+                        <button type="button" class="btn btn-outline-danger btn-sm mx-1" title="Eliminar" onclick="openDelete(${row.id_administrador})">
                             <i class="bi bi-trash-fill"></i>
                         </button>
-                    </td>
-                </tr>
+                    </div>
+                </td>
+            </tr>
             `;
         });
         // Se muestra un mensaje de acuerdo con el resultado.

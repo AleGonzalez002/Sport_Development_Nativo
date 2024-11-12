@@ -83,15 +83,18 @@ const fillTable = async (form = null) => {
                     <td>${row.nombre_cliente}</td>
                     <td>${row.correo_cliente}</td>
                     <td>${row.dui_cliente}</td>
-                    <td>
-                        <button type="button" class="btn btn-success" onclick="openUpdate(${row.id_cliente})">
+                    <td class="text-center">
+                    <div class="d-flex align-items-center">
+                        <!-- Botón de editar -->
+                        <button type="button" class="btn btn-outline-success btn-sm mx-1" title="Editar" onclick="openUpdate(${row.id_cliente})">
                             <i class="bi bi-pencil-fill"></i>
                         </button>
-                        <div class="py-1"></div>
-                        <button type="button" class="btn btn-danger" onclick="openDelete(${row.id_cliente})">
+                        <!-- Botón de eliminar -->
+                        <button type="button" class="btn btn-outline-danger btn-sm mx-1" title="Eliminar" onclick="openDelete(${row.id_cliente})">
                             <i class="bi bi-trash-fill"></i>
                         </button>
-                    </td>
+                    </div>
+                </td>
                 </tr>
             `;
         });

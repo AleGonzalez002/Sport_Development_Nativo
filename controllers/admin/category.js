@@ -81,18 +81,20 @@ const fillTable = async (form = null) => {
                     <td><img src="../../resources/img/categorias/${row.imagen_categoria}" height="120"></td>
                     <td>${row.nombre_categoria}</td>
                     <td>${row.descripcion_categoria}</td>
-                    <td>
-                        <button type="button" class="btn btn-success" onclick="openUpdate(${row.id_categoria})">
+                    <td class="text-center">
+                    <div class="d-flex align-items-center">
+                        <!-- Botón de editar -->
+                        <button type="button" class="btn btn-outline-success btn-sm mx-1" title="Editar" onclick="openUpdate(${row.id_producto})">
                             <i class="bi bi-pencil-fill"></i>
                         </button>
-                        <div class="py-1"></div>
-                        <button type="button" class="btn btn-danger" onclick="openDelete(${row.id_categoria})">
+                        <!-- Botón de eliminar -->
+                        <button type="button" class="btn btn-outline-danger btn-sm mx-1" title="Eliminar" onclick="openDelete(${row.id_producto})">
                             <i class="bi bi-trash-fill"></i>
                         </button>
-                        <div class="py-1"></div>
-                        <button type="button" class="btn btn-dark" onclick="openReport(${row.id_categoria})">
+                           <button type="button" class="btn btn-outline-dark btn-sm mx-1" title="Eliminar" onclick="openReport(${row.id_categoria})">
                             <i class="bi bi-filetype-pdf"></i>
                         </button>
+                         </div>
                     </td>
                 </tr>
             `;
