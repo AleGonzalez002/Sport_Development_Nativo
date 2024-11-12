@@ -23,18 +23,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         DATA.dataset.forEach(row => {
             // Se crean y concatenan las tarjetas con los datos de cada producto.
             PRODUCTOS.innerHTML += `
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <div class="card mb-3">
-                        <img src="../../resources/img/productos/${row.imagen_producto}" class="card-img-top" alt="${row.nombre_producto}">
-                        <div class="card-body">
-                            <h5 class="card-title">${row.nombre_producto}</h5>
+                 <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card shadow-sm border-0 mb-4 rounded-3">
+                        <img src="../../resources/img/productos/${row.imagen_producto}" class="card-img-top" alt="${row.nombre_producto}" style="height: 200px; object-fit: cover;">
+                        <div class="card-body p-3">
+                            <h5 class="card-title text-truncate" style="font-size: 1.1rem; font-weight: 600;">${row.nombre_producto}</h5>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="text-muted" style="font-size: 1rem;">$${row.precio_producto}</span>
+                                <span class="badge bg-light text-dark">${row.existencias_producto} en stock</span>
+                            </div>
                         </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Precio $${row.precio_producto}</li>
-                            <li class="list-group-item">Existencias ${row.existencias_producto}</li>
-                        </ul>
-                        <div class="card-body text-center">
-                            <a href="product_detail.html?id=${row.id_producto}" class="btn btn-dark py-3">Agregar a carrito</a>
+                        <div class="card-footer bg-transparent border-0 text-center p-3">
+                            <a href="product_detail.html?id=${row.id_producto}" class="btn btn-dark btn-sm py-2 px-4 w-100 rounded-2">Agregar a carrito</a>
                         </div>
                     </div>
                 </div>
