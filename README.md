@@ -1,9 +1,9 @@
-# 🏋️ Sport Development Nativo
+# 🏋️ Sport Development
 
 **Plataforma de gestión y desarrollo para el sector deportivo.**
 
 ## 📋 ¿Qué es?
-Sport Development Nativo es una aplicación web para gestionar órdenes, productos, reportes y seguimiento de clientes en negocios relacionados con el deporte y fitness. Incluye funcionalidades de pedidos, pagos, tracking y generación de reportes analíticos.
+Sport Development es una aplicación web para gestionar órdenes, productos, reportes y seguimiento de clientes en negocios relacionados con el deporte y fitness. Incluye funcionalidades de pedidos, pagos, tracking y generación de reportes analíticos.
 
 ## 🛠️ Tecnologías
 - **Backend**: PHP
